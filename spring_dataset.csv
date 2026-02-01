@@ -22,9 +22,6 @@ SPRE020,Easy,Explain this code @Component class A { A(){ System.out.println(hi);
 SPRE021,Easy,What will this code do @Component class A { @PostConstruct void init(){ } },This method will run after bean is created and dependencies are injected
 SPRE022,Easy,Explain this code @Component @Scope(prototype) class A {},Spring will create new object every time this bean is requested
 SPRE023,Easy,What will happen in this code @Autowired private A a without @Component on A,Spring will not find bean and application will fail
-SPRE024,Easy,Explain this code context.getBean(A.class),It will return object of class A from Spring container
-SPRE025,Easy,What will happen if two beans of same type exist and we use @Autowired,Spring will get confused and will throw exception unless we specify which one to use
-
 SPRM001,Medium,In real projects how does Spring actually manage object creation and lifecycle,Spring creates objects using container then injects dependencies then manages their full lifecycle from creation till destruction
 SPRM002,Medium,Why people say Spring promotes loose coupling and how you have seen it in code,Because classes do not create their own dependencies and Spring injects them so we can change implementation without changing main code
 SPRM003,Medium,What is difference between constructor injection and field injection and which one you prefer,Constructor injection makes dependencies mandatory and is better for testing while field injection is simpler but less safe
@@ -48,9 +45,6 @@ SPRM020,Medium,Explain this code @PostConstruct public void init(){ System.out.p
 SPRM021,Medium,What will happen in this code @PreDestroy public void destroy(){ },This method will run when Spring container is shutting down
 SPRM022,Medium,Explain this code @Qualifier(fast) @Autowired Engine e,Spring will inject bean named fast into this variable
 SPRM023,Medium,What will happen in this code context.getBean(A.class) when no such bean exists,Spring will throw exception because bean is not found
-SPRM024,Medium,Explain this code @ComponentScan(basePackages=com.app),Spring will scan this package and register all annotated classes as beans
-SPRM025,Medium,What will happen if you put @Autowired on setter method,Spring will call that setter and inject dependency through it
-
 SPRH001,Hard,Your Spring application fails at startup because of circular dependency so how will you fix it,I will break the dependency by introducing interface or using setter injection or redesigning the classes
 SPRH002,Hard,What actually happens when Spring creates a proxy object,Spring creates a wrapper object around real object and calls go through proxy before reaching actual method
 SPRH003,Hard,Why Spring uses proxy for AOP and transactions,Spring uses proxy so it can add extra behavior like transaction or logging without changing business code
@@ -74,5 +68,4 @@ SPRH020,Hard,What is difference between BeanFactoryPostProcessor and BeanPostPro
 SPRH021,Hard,How do you hook into Spring lifecycle to add custom logic,We can use BeanPostProcessor or lifecycle annotations
 SPRH022,Hard,What is self invocation problem in Spring AOP,When a method inside class calls another method of same class proxy is bypassed so AOP does not work
 SPRH023,Hard,Why Spring transactions do not work on private methods,Because proxy can only override public methods
-SPRH024,Hard,What happens if two beans depend on each other with constructor injection,Spring cannot resolve it and will throw circular dependency error
-SPRH025,Hard,How do you design Spring configuration for very large application,We split configuration into modules use profiles use multiple contexts and keep things loosely coupled
+
