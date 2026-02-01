@@ -1,0 +1,170 @@
+QuestionID,Difficulty,Question,Answer
+JAVAE001,Easy,So first tell me what exactly is Java and where you have used it,Java is basically an object oriented programming language and I mostly use it to build backend logic and small applications and it runs on JVM so it works on any system
+JAVAE002,Easy,Ok so when you write Java code how does it actually run in the system,First Java compiler converts code into bytecode and then JVM runs that bytecode
+JAVAE003,Easy,Why people say Java is platform independent,Because Java does not run directly on OS it runs on JVM and JVM is available for every OS
+JAVAE004,Easy,Can you explain what JVM actually does,JVM executes bytecode and also manages memory and handles garbage collection
+JAVAE005,Easy,You must have heard JDK and JRE so what is the real difference,JDK is used to write and compile code and JRE is only used to run Java programs
+JAVAE006,Easy,If I install JDK do I still need JRE,JDK already contains JRE so we do not need to install it separately
+JAVAE007,Easy,While coding in Java what basic data types you usually use,I mostly use int float double char and boolean
+JAVAE008,Easy,In Java everything is object but still we have primitives so why is that,Primitives are there for performance and memory efficiency
+JAVAE009,Easy,So tell me what is a class in your own words,Class is like a blueprint which defines what an object will have and what it can do
+JAVAE010,Easy,Then what exactly is an object,Object is a real instance of a class which we actually use in program
+JAVAE011,Easy,Why Java program always starts from main method,Because JVM looks for main method first to start execution
+JAVAE012,Easy,Why main method is static in Java,So that JVM can call it without creating object
+JAVAE013,Easy,When you create object what method is called automatically,Constructor is called automatically when object is created
+JAVAE014,Easy,Can you tell me what constructor is used for,Constructor is used to initialize object variables
+JAVAE015,Easy,Can we write more than one constructor in a class,Yes we can do constructor overloading by using different parameters
+JAVAE016,Easy,You have used this keyword so why do we actually need it,This keyword is used to refer current object and to avoid confusion between variables
+JAVAE017,Easy,So tell me what is inheritance and why do we use it,Inheritance is used to reuse code and access parent class features in child class
+JAVAE018,Easy,In simple words what is polymorphism,Polymorphism means same method behaves differently in different situations
+JAVAE019,Easy,What is the difference between overloading and overriding,Overloading is same method name in same class and overriding is redefining parent method in child class
+JAVAE020,Easy,Why do we make variables private in class,To protect data and achieve encapsulation
+JAVAE021,Easy,So how do you access private variables then,We use getters and setters to access private variables
+JAVAE022,Easy,Have you used interface If yes why,Yes interface is used when we want to define a rule that classes must follow
+JAVAE023,Easy,What is the use of abstract class in real projects,It is used when we want to share common code and also force child class to implement some methods
+JAVAE024,Easy,Why Java does not support multiple inheritance with classes,To avoid confusion and complexity like diamond problem
+JAVAE025,Easy,So how Java achieves multiple inheritance,By using interfaces
+JAVAE026,Easy,What is package and why we use it,Package is used to organize code and avoid class name conflicts
+JAVAE027,Easy,When you write static keyword what does it mean,It means that variable or method belongs to class not to object
+JAVAE028,Easy,So where have you used static in your code,I have used static in main method and utility methods
+JAVAE029,Easy,What is final keyword and where do you use it,Final is used when we do not want to change variable or override method or extend class
+JAVAE030,Easy,While running program have you seen errors so what is exception,Exception is a runtime problem that stops normal flow of program
+JAVAE031,Easy,So how do you usually handle exceptions in your code,We use try catch block to handle exceptions
+JAVAE032,Easy,What is finally block and when it is useful,Finally block is used to write cleanup code and it always runs
+JAVAE033,Easy,You use String a lot so what exactly is String in Java,String is an object that represents sequence of characters
+JAVAE034,Easy,People say String is immutable so what does that mean,It means once created we cannot change its value
+JAVAE035,Easy,So why Java made String immutable,For security memory saving and thread safety
+JAVAE036,Easy,What is the difference between == and equals in real usage,Double equal checks reference and equals checks actual content
+JAVAE037,Easy,When do you use array in your program,When I need to store multiple values of same type
+JAVAE038,Easy,If you want to repeat something many times what do you use,We use loops like for and while
+JAVAE039,Easy,So when do you prefer for loop and when while loop,If I know number of iterations I use for loop otherwise while loop
+JAVAE040,Easy,In loop what is use of break and continue,Break stops loop and continue skips current iteration
+JAVAE041,Easy,Can you explain what this code will print int a=5 System.out.println(a++),It will print 5 because first value is used then it is increased to 6
+JAVAE042,Easy,What will be output of this code int a=5 System.out.println(++a),It will print 6 because value is increased first and then printed
+JAVAE043,Easy,Can you tell me what happens in this code int a=10 int b=20 a=b System.out.println(a),It will print 20 because value of b is assigned to a
+JAVAE044,Easy,What will this code print String s1=new String(hello) String s2=new String(hello) System.out.println(s1==s2),It will print false because both references point to different objects
+JAVAE045,Easy,Explain this code String s1=hello String s2=hello System.out.println(s1==s2),It will print true because both refer to same string from string pool
+JAVAE046,Easy,What will happen in this code int arr[]=new int[5] System.out.println(arr[0]),It will print 0 because default value of int array is zero
+JAVAE047,Easy,Can you explain this loop for int i=0 i<5 i++ System.out.println(i),It will print numbers from 0 to 4 because loop runs until i is less than 5
+JAVAE048,Easy,What will this code do int i=0 while(i<3){ System.out.println(i) i++; },It will print 0 1 2 and then loop will stop
+JAVAE049,Easy,What error will this code throw int a=10 int b=0 System.out.println(a/b),It will throw ArithmeticException because division by zero is not allowed
+JAVAE050,Easy,Can you explain this code if(true){ System.out.println(Hello); },This code will give compile time error because Hello is not in quotes
+JAVAE051,Easy,What will happen if we run this code String s=null System.out.println(s.length()),It will throw NullPointerException because we are calling method on null
+JAVAE052,Easy,Explain this code int a=5 int b=5 System.out.println(a==b),It will print true because both values are same
+JAVAE053,Easy,What will be output of this code int x=1 x+=2 System.out.println(x),It will print 3 because x becomes 1 plus 2
+JAVAE054,Easy,Can you explain this code int a=3 int b=4 System.out.println(a>b),It will print false because 3 is not greater than 4
+JAVAE055,Easy,What will this code print int arr[]={1 2 3} System.out.println(arr.length),It will print 3 because array has three elements
+
+
+JAVAM001,Medium,So can you explain what exactly happens in memory when you create an object in Java,When we create an object first memory is allocated in heap then constructor is called and reference is stored in stack and after that we can use that object in program
+JAVAM002,Medium,Many people talk about heap and stack so can you explain how both are used in real execution,Stack is mainly used for method calls and local variables and heap is used to store objects and when method finishes stack memory is cleared but heap object stays until garbage collection
+JAVAM003,Medium,You said String is immutable so what actually happens if we try to change a String,When we try to change a String Java creates a new object and old one remains unchanged and reference is updated to new object
+JAVAM004,Medium,So where exactly these String objects are stored in memory,Strings are stored in heap and there is also a special area called String pool to reuse same values
+JAVAM005,Medium,In real projects why do people prefer StringBuilder over String,Because StringBuilder is mutable and when we modify string many times it does not create new objects again and again so it is faster and uses less memory
+JAVAM006,Medium,Can you explain garbage collection in your own words,Garbage collection means Java automatically removes objects which are no longer used so that memory can be freed and program does not crash due to memory issue
+JAVAM007,Medium,So how does JVM decide which object should be removed,JVM checks which objects are not reachable by any reference and those objects become eligible for garbage collection
+JAVAM008,Medium,Why do we need wrapper classes in Java,Wrapper classes are needed when we want to treat primitive values like objects such as when working with collections
+JAVAM009,Medium,You might have heard autoboxing so can you explain what problem it solves,Autoboxing automatically converts primitive to object and unboxing converts object to primitive so developer does not need to do it manually
+JAVAM010,Medium,If I ask you when to use ArrayList and when LinkedList what will you say,If we need fast access by index we use ArrayList and if we do many insert and delete operations we prefer LinkedList
+JAVAM011,Medium,So tell me how HashMap actually stores data internally,HashMap stores data in key value form and it uses hashcode of key to decide where to store the value in memory
+JAVAM012,Medium,What kind of problems you faced with HashMap in multithreading,HashMap is not thread safe so sometimes data can become inconsistent if multiple threads modify it at same time
+JAVAM013,Medium,Then how do you solve that problem in real projects,We use synchronized map or ConcurrentHashMap to make it thread safe
+JAVAM014,Medium,So what is the main difference between HashMap and HashTable in practice,HashMap is not synchronized and faster while HashTable is synchronized and slower so mostly we use HashMap
+JAVAM015,Medium,Can you explain what Set interface is used for with some real usage,Set is used when we want unique values only such as storing unique user ids or unique emails
+JAVAM016,Medium,When you want to sort objects how do you usually do that,We use Comparable when we want default sorting and Comparator when we want custom sorting logic
+JAVAM017,Medium,Can you explain multithreading in simple words,Multithreading means running multiple tasks at same time so that CPU is used efficiently
+JAVAM018,Medium,What is the real difference between process and thread in practical sense,Process is an independent running program and thread is a small part of that program which shares memory
+JAVAM019,Medium,So how do you usually create thread in Java project,We either extend Thread class or implement Runnable interface and then start the thread
+JAVAM020,Medium,What problem does synchronization actually solve,Synchronization makes sure that only one thread can access critical code at a time so data remains consistent
+JAVAM021,Medium,Have you heard about deadlock so what exactly happens in that case,Deadlock happens when two threads wait for each other resources and none of them can continue
+JAVAM022,Medium,So how can you avoid deadlock in your code,We can avoid deadlock by proper ordering of locks and by not holding multiple locks unnecessarily
+JAVAM023,Medium,Can you explain exception hierarchy in Java in simple way,All exceptions come under Throwable and then we have Exception and Error and under Exception we have checked and unchecked exceptions
+JAVAM024,Medium,In real projects when do you use throws keyword,We use throws when we want to pass exception responsibility to the calling method
+JAVAM025,Medium,Then why do we use throw keyword,Throw is used when we want to manually create and send an exception in code
+JAVAM026,Medium,People ask about final finally and finalize so can you explain it in simple way,Final is used for restriction finally is used with try catch and finalize is a method called before object is removed
+JAVAM027,Medium,Have you used marker interface If yes what is the idea behind it,Marker interface does not have methods but it gives special information to JVM like Serializable
+JAVAM028,Medium,If I copy one object into another what exactly happens,If we do shallow copy only reference is copied and if we do deep copy then actual object data is copied
+JAVAM029,Medium,So what is the real use of clone method,Clone method is used to create a copy of existing object without writing much code
+JAVAM030,Medium,Why volatile keyword is used in multithreading,Volatile makes sure that value is always read from main memory and not from thread local cache
+JAVAM031,Medium,What is enum and where have you used it,Enum is used when we have fixed set of values such as status or roles in application
+JAVAM032,Medium,Why do we use static block sometimes,Static block is used to initialize static data when class is loaded
+JAVAM033,Medium,What is instance block and when it runs,Instance block runs before constructor whenever object is created
+JAVAM034,Medium,So in your opinion when to use abstract class and when interface,We use interface when we need multiple inheritance and abstract class when we want to share some common code
+JAVAM035,Medium,Can you explain composition in real project terms,Composition means one class uses another class object to perform some work
+JAVAM036,Medium,What is aggregation and how is it different from composition,Aggregation is a weak relationship where objects can exist independently
+JAVAM037,Medium,Have you ever seen ConcurrentModificationException so why it happens,It happens when we modify collection while iterating using normal iterator
+JAVAM038,Medium,So how do you avoid that exception,We can use iterator remove method or use concurrent collections
+JAVAM039,Medium,Why Optional class was introduced in Java,Optional is used to avoid NullPointerException and force developer to handle null properly
+JAVAM040,Medium,Have you used Stream API so what benefit it gives,Stream API makes code cleaner and helps in processing collection data in functional style
+JAVAM041,Medium,Can you explain what will happen in this code List list=new ArrayList list.add(1) list.add(1.5) System.out.println(list),It will print both values because ArrayList stores Object type and allows mixed data types
+JAVAM042,Medium,What will be output of this code String s=hello s.concat(world) System.out.println(s),It will print hello because String is immutable and concat creates new object but reference is not changed
+JAVAM043,Medium,Explain this code StringBuilder sb=new StringBuilder(hi) sb.append(bye) System.out.println(sb),It will print hibye because StringBuilder is mutable and modifies same object
+JAVAM044,Medium,What will happen in this code int arr[]=new int[3] arr[5]=10 System.out.println(arr[0]),It will throw ArrayIndexOutOfBoundsException because index 5 does not exist
+JAVAM045,Medium,Can you explain this code try{ int a=10 int b=0 System.out.println(a/b) } catch(Exception e){ System.out.println(error) },It will print error because exception occurs and catch block handles it
+JAVAM046,Medium,What will be output of this code Integer a=100 Integer b=100 System.out.println(a==b),It will print true because small integers are cached by JVM
+JAVAM047,Medium,What will be output of this code Integer a=200 Integer b=200 System.out.println(a==b),It will print false because values outside cache range create different objects
+JAVAM048,Medium,Explain this code static{ System.out.println(hello); } main method prints nothing,It will print hello because static block runs when class is loaded before main
+JAVAM049,Medium,What will happen in this code class Test{ Test(){ this(); } },It will cause infinite constructor call and result in StackOverflowError
+JAVAM050,Medium,Explain this code Object o=new String(hi) System.out.println(o instanceof String),It will print true because object is actually holding String
+JAVAM051,Medium,What will be output of this code for(int i=0;i<3;i++){ } System.out.println(i),It will give compile error because i is not visible outside loop
+JAVAM052,Medium,Explain this code List list=new ArrayList list.add(null) list.add(null) System.out.println(list.size()),It will print 2 because list allows multiple null values
+JAVAM053,Medium,What will happen in this code Map map=new HashMap map.put(null 1) map.put(null 2) System.out.println(map.size()),It will print 1 because HashMap allows only one null key
+JAVAM054,Medium,Explain this code try{ System.exit(0); } finally{ System.out.println(end); },Finally will not run because JVM exits before it can execute
+JAVAM055,Medium,What will be output of this code String s1=hello String s2=s1 s2=world System.out.println(s1),It will print hello because changing s2 reference does not change s1
+
+
+JAVAH001,Hard,Your application is getting OutOfMemoryError so how will you start debugging this,First I will check which area is running out of memory then I will analyze heap dump and see which objects are growing and then I will check why those objects are not getting released and fix the reference issue
+JAVAH002,Hard,What exactly happens inside JVM when a method is called,When a method is called a new stack frame is created in stack and local variables are stored there and when method finishes that stack frame is removed
+JAVAH003,Hard,If garbage collection is automatic then why do memory leaks still happen,Memory leaks happen when objects are still referenced even though we do not need them so garbage collector cannot remove them
+JAVAH004,Hard,How do you decide whether to use strong reference or weak reference,If object must stay in memory I use strong reference and if it is cache like data then I use weak reference so GC can remove it
+JAVAH005,Hard,Your HashMap is behaving slow when data grows so what can be the reason,It can be because of too many collisions or bad hashcode implementation or frequent resizing
+JAVAH006,Hard,What actually happens when HashMap resizes,When HashMap reaches threshold it creates a bigger array and rehashes all existing entries which is costly operation
+JAVAH007,Hard,Why is it dangerous to override equals without overriding hashCode,If both are not consistent then HashMap and HashSet will not work correctly and data may not be found
+JAVAH008,Hard,In multithreading project how do you decide what code should be synchronized,Only the critical section which modifies shared data should be synchronized to avoid performance issues
+JAVAH009,Hard,If synchronization is slowing down your program what alternatives can you think of,We can use concurrent collections atomic classes or reduce lock scope
+JAVAH010,Hard,Can you explain what happens in deadlock situation with simple example,Thread A holds lock one and waits for lock two and Thread B holds lock two and waits for lock one so both wait forever
+JAVAH011,Hard,How do you detect deadlock in running application,We can use thread dump and analyze blocked threads or use monitoring tools
+JAVAH012,Hard,What is difference between notify and notifyAll in real usage,Notify wakes one waiting thread and notifyAll wakes all waiting threads which is safer in complex systems
+JAVAH013,Hard,Why double checked locking was broken earlier and how it is fixed now,Earlier because of instruction reordering it was unsafe but with volatile keyword it works correctly now
+JAVAH014,Hard,What is happens before relationship in multithreading,It guarantees that changes made by one thread are visible to another thread in correct order
+JAVAH015,Hard,When do you prefer Runnable over Thread class,We prefer Runnable because Java does not support multiple inheritance and it separates task from thread
+JAVAH016,Hard,Your CPU usage is high but memory is fine so what kind of issues you will suspect,I will suspect infinite loops busy waiting or too many threads doing active work
+JAVAH017,Hard,What is thread starvation and how it happens,Thread starvation happens when some threads never get CPU time because other threads always take priority
+JAVAH018,Hard,Can you explain difference between synchronized and ReentrantLock,Synchronized is simpler but ReentrantLock gives more control like try lock and fairness option
+JAVAH019,Hard,Why wait and notify must be called inside synchronized block,Because they work on object monitor and without lock it will throw exception
+JAVAH020,Hard,What is class loader and why it is important,Class loader loads classes into JVM and it helps in security and separation of namespaces
+JAVAH021,Hard,Your application works locally but fails in server so what could be class loading issue,It can be because of different versions of libraries or classpath conflict
+JAVAH022,Hard,What is reflection and why it should be used carefully,Reflection allows accessing private data and methods at runtime and it is slow and can break encapsulation
+JAVAH023,Hard,Have you faced performance issue due to excessive object creation so how did you fix it,We reduced object creation by reusing objects and using pooling where possible
+JAVAH024,Hard,Why immutable objects are automatically thread safe,Because their state never changes so multiple threads can use them without synchronization
+JAVAH025,Hard,What problem does ThreadLocal solve in real applications,ThreadLocal gives each thread its own copy of variable so no synchronization is needed
+JAVAH026,Hard,What is difference between fail fast and fail safe iterator in practice,Fail fast throws exception on modification and fail safe works on copy so it does not throw exception
+JAVAH027,Hard,What happens if exception is thrown inside static block,Class will fail to load and program may crash
+JAVAH028,Hard,How do you design custom exception and when do you use it,We create custom exception when we want to represent business specific error and handle it properly
+JAVAH029,Hard,What is difference between shallow copy and deep copy in real bugs,Shallow copy causes shared data issue while deep copy creates independent objects
+JAVAH030,Hard,What happens if two objects refer to each other and no one else refers them,Garbage collector can still remove them because it checks reachability not reference count
+JAVAH031,Hard,Why finalize method is considered dangerous and not reliable,Because there is no guarantee when it will run and it can delay garbage collection
+JAVAH032,Hard,What is memory visibility problem in multithreading,One thread changes value but other thread cannot see it because of CPU cache
+JAVAH033,Hard,How volatile solves memory visibility problem,Volatile forces read and write from main memory so all threads see updated value
+JAVAH034,Hard,What is difference between Callable and Runnable,Callable can return result and throw exception while Runnable cannot
+JAVAH035,Hard,Your program hangs sometimes but no error is shown so how will you debug it,I will take thread dump and check blocked threads and deadlock situation
+JAVAH036,Hard,What is difference between composition and inheritance in design decisions,Composition is more flexible and avoids tight coupling while inheritance is rigid
+JAVAH037,Hard,Why we say favor composition over inheritance,Because composition allows changing behavior at runtime and reduces dependency
+JAVAH038,Hard,What happens if hashCode always returns same value,All entries go into same bucket and HashMap becomes very slow like linked list
+JAVAH039,Hard,What is happens if equals is slow and used in HashMap operations,HashMap operations become slow because equals is called frequently during lookup
+JAVAH040,Hard,If you had to explain JVM to a junior what will you focus on,I will explain memory areas class loading garbage collection and how code actually runs
+JAVAH041,Hard,What will happen in this code class Test{ static{ int a=10/0; } } when you run it,Class will fail to load and program will throw ExceptionInInitializerError
+JAVAH042,Hard,Explain this code public static void main(String[] args){ try{ return; } finally{ System.out.println(end); } },It will print end because finally always executes even if return is called
+JAVAH043,Hard,What will happen in this code class A{ A(){ foo(); } void foo(){ System.out.println(test); } int test=10; },It will print 0 because instance variables are not initialized yet when constructor runs
+JAVAH044,Hard,Explain this code Map map=new HashMap map.put(new String(abc) 1) map.put(new String(abc) 2) System.out.println(map.size()),It will print 1 because equals and hashCode treat both keys as same
+JAVAH045,Hard,What will happen in this code if two threads modify same HashMap at same time,It can cause data corruption or infinite loop because HashMap is not thread safe
+JAVAH046,Hard,Explain this code volatile boolean flag=true while(flag){ } in multithreading context,Thread will not cache value and will always read latest value from memory
+JAVAH047,Hard,What will happen in this code ExecutorService service=Executors.newSingleThreadExecutor service.submit(task) service.shutdownNow,Task may stop immediately because shutdownNow interrupts running thread
+JAVAH048,Hard,Explain this code synchronized(this){ synchronized(this){ } },It will not deadlock because same thread can acquire same lock multiple times
+JAVAH049,Hard,What will happen in this code Object o=new Object synchronized(o){ o.wait(); },Thread will go into waiting state and release the lock
+JAVAH050,Hard,Explain this code Object o=new Object o.wait(),It will throw IllegalMonitorStateException because wait must be called inside synchronized block
+JAVAH051,Hard,What will happen in this code Thread t=new Thread t.start t.start,It will throw IllegalThreadStateException because thread cannot be started twice
+JAVAH052,Hard,Explain this code class Test{ public void finalize(){ System.out.println(clean); } },There is no guarantee when or if finalize will be called by JVM
+JAVAH053,Hard,What will happen in this code List list=Collections.unmodifiableList(new ArrayList()) list.add(1),It will throw UnsupportedOperationException because list is read only
+JAVAH054,Hard,Explain this code class A{ static int x=10; static{ x=20; } },Final value of x will be 20 because static block runs after variable initialization
+JAVAH055,Hard,What will happen in this code String s=new String(hi) s.intern(),It will put string in string pool but s will still point to heap object

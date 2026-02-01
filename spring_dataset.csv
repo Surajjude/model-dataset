@@ -1,0 +1,78 @@
+QuestionID,Difficulty,Question,Answer
+SPRE001,Easy,So tell me what exactly is Spring framework and why people use it,Spring is a framework that makes Java development easier and it helps in managing objects and dependencies and reduces boilerplate code
+SPRE002,Easy,Before Spring how people usually managed objects and why Spring became popular,Earlier developers created objects manually using new keyword and Spring made it easier by managing object creation and wiring
+SPRE003,Easy,People say Spring is lightweight so what does that mean,It means Spring does not force heavy configuration and we can use only what we need
+SPRE004,Easy,Can you explain what is IoC in simple words,IoC means control of object creation is given to Spring instead of developer
+SPRE005,Easy,So what is dependency injection in your own words,Dependency injection means Spring gives required objects to a class instead of class creating them itself
+SPRE006,Easy,Why dependency injection is better than using new keyword everywhere,It makes code loosely coupled and easy to test and easy to change
+SPRE007,Easy,What is Spring container and what does it do,Spring container creates objects manages them and injects dependencies
+SPRE008,Easy,Have you heard about Bean so what exactly is a Bean in Spring,Bean is simply an object that is created and managed by Spring container
+SPRE009,Easy,What is ApplicationContext in Spring,ApplicationContext is an advanced container that manages beans and provides many extra features
+SPRE010,Easy,What is difference between BeanFactory and ApplicationContext,ApplicationContext is more powerful and used in real applications while BeanFactory is basic
+SPRE011,Easy,How does Spring know which class it should create object for,Spring uses configuration either XML or annotations to know which classes are beans
+SPRE012,Easy,You used annotations in Spring so why annotations are helpful,Annotations reduce configuration and make code cleaner and easier to understand
+SPRE013,Easy,What is @Component annotation used for,It tells Spring that this class should be managed as a bean
+SPRE014,Easy,What is @Autowired and why we use it,@Autowired is used to tell Spring to inject dependency automatically
+SPRE015,Easy,What is scope of bean and which scope you mostly use,Scope defines how many objects Spring creates and mostly we use singleton scope
+SPRE016,Easy,Explain this code @Component class A {} what will Spring do,Spring will create object of this class and manage it as a bean
+SPRE017,Easy,What will happen in this code @Component class A { @Autowired B b; },Spring will automatically find B bean and inject it into A
+SPRE018,Easy,Explain this code ApplicationContext ctx=new ClassPathXmlApplicationContext(config.xml),Spring will load configuration file and create all defined beans
+SPRE019,Easy,What will happen if Spring does not find bean for @Autowired,Application will fail at startup because dependency is not satisfied
+SPRE020,Easy,Explain this code @Component class A { A(){ System.out.println(hi); } },It will print hi when Spring creates object of this class
+SPRE021,Easy,What will this code do @Component class A { @PostConstruct void init(){ } },This method will run after bean is created and dependencies are injected
+SPRE022,Easy,Explain this code @Component @Scope(prototype) class A {},Spring will create new object every time this bean is requested
+SPRE023,Easy,What will happen in this code @Autowired private A a without @Component on A,Spring will not find bean and application will fail
+SPRE024,Easy,Explain this code context.getBean(A.class),It will return object of class A from Spring container
+SPRE025,Easy,What will happen if two beans of same type exist and we use @Autowired,Spring will get confused and will throw exception unless we specify which one to use
+
+SPRM001,Medium,In real projects how does Spring actually manage object creation and lifecycle,Spring creates objects using container then injects dependencies then manages their full lifecycle from creation till destruction
+SPRM002,Medium,Why people say Spring promotes loose coupling and how you have seen it in code,Because classes do not create their own dependencies and Spring injects them so we can change implementation without changing main code
+SPRM003,Medium,What is difference between constructor injection and field injection and which one you prefer,Constructor injection makes dependencies mandatory and is better for testing while field injection is simpler but less safe
+SPRM004,Medium,In your project how do you usually configure Spring using XML or annotations and why,Mostly we use annotations because it reduces configuration and makes code more readable
+SPRM005,Medium,What problem does @Qualifier solve in real application,@Qualifier is used when multiple beans of same type exist and we want to tell Spring exactly which one to inject
+SPRM006,Medium,Can you explain bean lifecycle in simple steps,First Spring creates bean then injects dependencies then calls init methods and at shutdown it calls destroy methods
+SPRM007,Medium,What is singleton bean problem in multithreading and how Spring handles it,Singleton bean is shared by all threads so we must write thread safe code and Spring does not make it thread safe automatically
+SPRM008,Medium,When do you choose prototype scope instead of singleton,When we need a new object every time and object holds request specific data
+SPRM009,Medium,What is lazy initialization and why it is useful,Lazy initialization means bean is created only when needed and it reduces startup time
+SPRM010,Medium,What is difference between @Component and @Service or @Repository,All are same for Spring but they are used for better code understanding and special behaviors like exception translation
+SPRM011,Medium,How does Spring find all annotated classes without listing them,Spring scans packages using component scanning and finds annotated classes automatically
+SPRM012,Medium,What is Spring Expression Language and where it is used,It is used to read values and do small logic inside configuration
+SPRM013,Medium,What is @Primary and when do you use it,@Primary is used to tell Spring which bean should be chosen by default when multiple beans exist
+SPRM014,Medium,How do you read values from application properties file in Spring,We use @Value annotation or configuration properties class to read values
+SPRM015,Medium,What is difference between ApplicationContext and BeanFactory in real usage,ApplicationContext loads all beans at startup and provides many extra features so it is used in real projects
+SPRM016,Medium,Explain this code @Component class A { @Autowired public A(B b){ } },Spring will use constructor injection and will inject B object when creating A
+SPRM017,Medium,What will happen in this code @Autowired private A a when there are two beans of A,Spring will throw error because it does not know which one to choose
+SPRM018,Medium,Explain this code @Bean public A getA(){ return new A(); },Spring will call this method and store returned object as a bean
+SPRM019,Medium,What will happen in this code @Lazy @Component class A {},Bean will not be created at startup and will be created only when requested
+SPRM020,Medium,Explain this code @PostConstruct public void init(){ System.out.println(start); },This method will run after dependencies are injected and before bean is used
+SPRM021,Medium,What will happen in this code @PreDestroy public void destroy(){ },This method will run when Spring container is shutting down
+SPRM022,Medium,Explain this code @Qualifier(fast) @Autowired Engine e,Spring will inject bean named fast into this variable
+SPRM023,Medium,What will happen in this code context.getBean(A.class) when no such bean exists,Spring will throw exception because bean is not found
+SPRM024,Medium,Explain this code @ComponentScan(basePackages=com.app),Spring will scan this package and register all annotated classes as beans
+SPRM025,Medium,What will happen if you put @Autowired on setter method,Spring will call that setter and inject dependency through it
+
+SPRH001,Hard,Your Spring application fails at startup because of circular dependency so how will you fix it,I will break the dependency by introducing interface or using setter injection or redesigning the classes
+SPRH002,Hard,What actually happens when Spring creates a proxy object,Spring creates a wrapper object around real object and calls go through proxy before reaching actual method
+SPRH003,Hard,Why Spring uses proxy for AOP and transactions,Spring uses proxy so it can add extra behavior like transaction or logging without changing business code
+SPRH004,Hard,In which situation AOP will not work in Spring,It will not work when method is called from same class because call does not go through proxy
+SPRH005,Hard,What is difference between JDK proxy and CGLIB proxy,JDK proxy works with interfaces and CGLIB works with classes by creating subclass
+SPRH006,Hard,Your @Transactional is not working so what all things you will check,First I will check if method is public and if call is coming from another class and if proxy is created
+SPRH007,Hard,What problem does propagation in transaction solve,Propagation decides how new transaction should behave if one already exists
+SPRH008,Hard,What is isolation level and why it matters,Isolation level controls how data is visible between concurrent transactions
+SPRH009,Hard,Your application is slow at startup so how will you analyze Spring context loading,I will enable debug logs and check which beans are taking more time to initialize
+SPRH010,Hard,What is difference between ApplicationContext and WebApplicationContext,WebApplicationContext is special context used in web applications and has web related features
+SPRH011,Hard,Have you used multiple Spring contexts and why,Yes in large applications we use parent child context to separate core and web beans
+SPRH012,Hard,What happens if bean creation fails in middle of context startup,Spring will stop startup and destroy already created beans
+SPRH013,Hard,How do you debug BeanCreationException in real projects,I check full stack trace and root cause and then check which dependency is missing or failing
+SPRH014,Hard,Why field injection is not recommended in large projects,Because it makes testing difficult and hides dependencies
+SPRH015,Hard,What is difference between eager and lazy initialization in big applications,Eager loads everything at startup and lazy loads when needed so startup time is reduced
+SPRH016,Hard,What happens internally when you use @ComponentScan,Spring scans classpath finds annotated classes and registers them in context
+SPRH017,Hard,How do you control which beans should be loaded in which environment,We use profiles to load different beans for different environments
+SPRH018,Hard,Your production bug is not reproducible locally so how Spring profiles help,Profiles allow using same code with different configuration so we can simulate production environment
+SPRH019,Hard,What is FactoryBean and when do you need it,FactoryBean is used when bean creation logic is complex and needs custom code
+SPRH020,Hard,What is difference between BeanFactoryPostProcessor and BeanPostProcessor,One modifies bean definitions before creation and other modifies bean after creation
+SPRH021,Hard,How do you hook into Spring lifecycle to add custom logic,We can use BeanPostProcessor or lifecycle annotations
+SPRH022,Hard,What is self invocation problem in Spring AOP,When a method inside class calls another method of same class proxy is bypassed so AOP does not work
+SPRH023,Hard,Why Spring transactions do not work on private methods,Because proxy can only override public methods
+SPRH024,Hard,What happens if two beans depend on each other with constructor injection,Spring cannot resolve it and will throw circular dependency error
+SPRH025,Hard,How do you design Spring configuration for very large application,We split configuration into modules use profiles use multiple contexts and keep things loosely coupled

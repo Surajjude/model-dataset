@@ -1,0 +1,82 @@
+QuestionID,Difficulty,Question,Answer
+SBE001,Easy,So tell me what exactly is Spring Boot and why people prefer it,Spring Boot is built on top of Spring and it makes application development faster by reducing configuration and setup work
+SBE002,Easy,Before Spring Boot what problem developers were facing,They had to write lot of configuration and setup manually which was time consuming
+SBE003,Easy,What does auto configuration mean in Spring Boot,Auto configuration means Spring Boot automatically configures things based on libraries present in project
+SBE004,Easy,What is starter dependency in Spring Boot,Starter is a group of dependencies that we add to get everything needed for a feature
+SBE005,Easy,Why people say Spring Boot reduces boilerplate code,Because it provides default configuration and embedded server and simple setup
+SBE006,Easy,What is embedded server in Spring Boot,Embedded server means Tomcat or similar server comes inside application and we do not need to deploy separately
+SBE007,Easy,How do you usually run Spring Boot application,We run it using main method or using mvn spring boot run
+SBE008,Easy,What is application properties file used for,It is used to write configuration like port number and database details
+SBE009,Easy,What is difference between Spring and Spring Boot,Spring Boot removes manual configuration and makes Spring easier to use
+SBE010,Easy,What is @SpringBootApplication annotation,It is a combination of configuration component scan and auto configuration
+SBE011,Easy,Why Spring Boot is good for microservices,Because it is lightweight easy to start and has embedded server
+SBE012,Easy,What is actuator in Spring Boot,Actuator provides endpoints to monitor and manage application
+SBE013,Easy,What is default port of Spring Boot application,Default port is 8080
+SBE014,Easy,How do you change port in Spring Boot,We change it in application properties file
+SBE015,Easy,What is fat jar in Spring Boot,Fat jar is a jar file that contains application code and all dependencies and server
+
+SBE016,Easy,Explain this code @SpringBootApplication public class App { public static void main(String[] args){ SpringApplication.run(App.class args); } },This code starts Spring Boot application and creates Spring container
+SBE017,Easy,What will happen if you run this main method,Application will start and embedded server will also start
+SBE018,Easy,Explain this code @RestController public class Test { @GetMapping(hello) public String test(){ return hi; } },This will create a REST endpoint and when we open hello in browser it will return hi
+SBE019,Easy,What will happen in this code server.port=9090 in application properties,Application will start on port 9090 instead of 8080
+SBE020,Easy,Explain this code @SpringBootApplication @ComponentScan(basePackages=com.app),Spring Boot will scan only this package for components
+SBE021,Easy,What will this code do @SpringBootApplication(exclude=DataSourceAutoConfiguration.class),It will disable database auto configuration
+SBE022,Easy,Explain this code SpringApplication.run(App.class args),It will bootstrap the application and start Spring context
+SBE023,Easy,What will happen if application properties file is missing,Application will still start using default values
+SBE024,Easy,Explain this code @Value(${server.port}) private int port,Spring will inject port value from properties file into this variable
+SBE025,Easy,What will happen if two controllers have same URL mapping,Application will fail at startup because of ambiguous mapping
+
+
+SBM001,Medium,In real projects how do you manage different environments like dev and prod in Spring Boot,We use profiles and different properties files so each environment can have its own configuration
+SBM002,Medium,What is Spring Boot profile and why it is important,Profile helps us load different beans and configuration based on environment
+SBM003,Medium,How do you activate a specific profile in application,We can activate profile using properties file or command line argument
+SBM004,Medium,What happens if no profile is active in Spring Boot,Default configuration is used
+SBM005,Medium,How do you configure database in Spring Boot,We write database details in application properties and Spring Boot auto configures datasource
+SBM006,Medium,What is connection pooling and why it matters,Connection pooling reuses database connections and improves performance
+SBM007,Medium,How does Spring Boot decide which beans to auto configure,It checks classpath and configuration and then applies conditions
+SBM008,Medium,What is condition annotation used for,It is used to load bean only when certain condition is true
+SBM009,Medium,What is difference between application properties and application yml,Both are used for configuration but yml is more structured and readable
+SBM010,Medium,How do you handle exceptions globally in Spring Boot,We use controller advice to catch and handle exceptions in one place
+SBM011,Medium,What is actuator and how do you use it in real projects,Actuator is used to monitor application health metrics and other info
+SBM012,Medium,How do you enable logging and change log level in Spring Boot,We configure it in application properties file
+SBM013,Medium,What is devtools and why it is useful,Devtools helps in auto restart and faster development
+SBM014,Medium,How do you secure sensitive values like passwords in properties,We use environment variables or external config and do not hardcode them
+SBM015,Medium,What is difference between @RestController and @Controller in Spring Boot,@RestController directly returns response body while @Controller returns view name
+
+SBM016,Medium,Explain this code @Profile(dev) @Component class A {},This bean will only be loaded when dev profile is active
+SBM017,Medium,What will happen in this code spring.profiles.active=prod in properties,Spring Boot will load prod configuration
+SBM018,Medium,Explain this code @ConfigurationProperties(prefix=db),Spring will bind properties starting with db to this class fields
+SBM019,Medium,What will happen in this code @ConditionalOnProperty(name=feature.enabled havingValue=true),Bean will be loaded only if property is true
+SBM020,Medium,Explain this code @RestControllerAdvice class GlobalHandler {},This class will handle exceptions globally for controllers
+SBM021,Medium,What will this code do logging.level.root=DEBUG,It will set log level to debug for whole application
+SBM022,Medium,Explain this code @EnableAutoConfiguration(exclude=SecurityAutoConfiguration.class),It will disable security auto configuration
+SBM023,Medium,What will happen in this code spring.jpa.hibernate.ddl auto=update,It will automatically update database schema based on entities
+SBM024,Medium,Explain this code @Value(${my.app.name}) private String name,Spring will inject value from properties file into this field
+SBM025,Medium,What will happen if database properties are wrong,Application will fail at startup because datasource cannot be created
+
+SBH001,Hard,Your Spring Boot application is starting very slowly so how will you analyze it,First I will enable startup logs and actuator and check which beans are taking long time to initialize
+SBH002,Hard,How do you debug auto configuration issues in Spring Boot,We enable debug mode and check auto configuration report to see what is getting applied
+SBH003,Hard,Your application works locally but fails in server so how will you approach this,First I will check profiles environment variables and configuration differences
+SBH004,Hard,What happens internally when Spring Boot application starts,It creates application context loads auto configuration scans components creates beans and then starts embedded server
+SBH005,Hard,How do you reduce memory usage of Spring Boot application,We reduce object creation disable unused auto configs and tune JVM options
+SBH006,Hard,What is difference between embedded server and external server in real deployment,Embedded server runs inside app while external server needs separate deployment and management
+SBH007,Hard,How do you design Spring Boot application for high traffic,We use proper caching connection pooling async processing and scale horizontally
+SBH008,Hard,How do you monitor Spring Boot application in production,We use actuator metrics logs and external monitoring tools
+SBH009,Hard,Your service sometimes gives slow response but CPU is fine so what will you check,I will check database calls external API calls and thread blocking issues
+SBH010,Hard,What is graceful shutdown and why it is important,Graceful shutdown allows running requests to complete before application stops
+SBH011,Hard,How do you handle configuration in container based deployment,We use environment variables and external config instead of hardcoding
+SBH012,Hard,What is difference between reactive and normal Spring Boot,Reactive is non blocking and uses event driven model while normal is thread per request
+SBH013,Hard,When should you choose reactive approach,When handling large number of concurrent requests with IO heavy operations
+SBH014,Hard,How do you handle versioning of REST APIs in Spring Boot,We use URL versioning or header based versioning to manage changes
+SBH015,Hard,What is blue green deployment and how Spring Boot fits into it,It is deployment strategy where we switch traffic between two versions and Spring Boot works well due to fast startup
+
+SBH016,Hard,Explain this code spring.main.lazy initialization=true,This will delay bean creation until they are actually needed
+SBH017,Hard,What will happen in this code management.endpoints.web.exposure.include=health info metrics,It will expose these actuator endpoints
+SBH018,Hard,Explain this code @ConditionalOnMissingBean class A {},Spring will create this bean only if no other bean of this type exists
+SBH019,Hard,What will happen in this code @SpringBootApplication(excludeName=org.example.SomeAutoConfig),That auto configuration will be skipped during startup
+SBH020,Hard,Explain this code server.shutdown=graceful,Application will wait for ongoing requests to finish before stopping
+SBH021,Hard,What will happen in this code spring.datasource.hikari.maximum pool size=50,It will set maximum database connection pool size to 50
+SBH022,Hard,Explain this code @EnableCaching,It will enable caching support in application
+SBH023,Hard,What will happen in this code @Async on a method,Method will run in separate thread and return immediately
+SBH024,Hard,Explain this code @Scheduled(fixedRate=5000),This method will run every five seconds
+SBH025,Hard,What will happen if actuator endpoints are exposed without security,It can leak sensitive information and is security risk
