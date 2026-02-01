@@ -1,0 +1,61 @@
+﻿QID,Difficulty,Questions,Answers
+1,Easy,How do you write a single-line comment,Using //
+2,Easy,What does the % (modulus) operator do,It returns the remainder of a division.
+3,Easy,Which operator is used to concatenate strings,The + operator
+4,Easy,What method converts a string to uppercase,.toUpperCase()
+5,Easy,Which function displays a message in a popup window,alert()
+6,Easy,Which array method removes the last element,.pop()
+7,Easy,What symbol is used for logical AND,&&
+8,Easy,Can you redeclare a let variable in the same scope,No
+9,Easy,Which event occurs when a user clicks an HTML element,onclick
+10,Easy,How do you create a new Date object,new Date()
+11,Easy,How do you join two arrays,Using the .concat() method
+12,Easy,How do you check if a number is even,num % 2 == 0
+13,Easy,What keyword stops a loop from executing,break
+14,Easy,What keyword skips the current iteration of a loop,continue
+15,Easy,How do you remove whitespace from both ends of a string,Using .trim()
+16,Easy,What is the global object in client-side JavaScript,window
+17,Easy,What is the data type of true,Boolean
+18,Easy,How do you check the length of a string str,str.length
+19,Easy,How do you define a function named myFunc,function myFunc() {  }
+20,Easy,How do you select an element by its ID,document.getElementById('idName')
+21,Medium,What is Event Bubbling,"When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors"
+22,Medium,What is the difference between window and document,window is the global object representing the browser tab; document is a property of window representing the loaded HTML content
+23,Medium,How do default parameters work in ES6,You can initialize named parameters with default values if no value or undefined is passed
+24,Medium,What is Array Destructuring,A syntax to unpack values from arrays into distinct variables
+25,Medium,What is the difference between setTimeout and setInterval,setTimeout runs once after a delay; setInterval runs repeatedly at specified intervals
+26,Medium,What is an IIFE (Immediately Invoked Function Expression),A function that runs as soon as it is defined
+27,Medium,How do you check if a specific key exists in an object,"Using the in operator (e.g., ""key"" in obj)"
+28,Medium,What is the difference between array.forEach() and array.map(),map returns a new array; forEach executes a function for side effects and returns undefined
+29,Medium,What is the Temporal Dead Zone (TDZ),"The time between entering a scope and the actual declaration of a let or const variable, during which accessing it throws an error"
+30,Medium,How do you create a Promise,"new Promise((resolve, reject) => {  })"
+31,Medium,What keywords are used to handle errors in JavaScript,"try, catch, finally, and throw"
+32,Medium,What is a module in JavaScript,A file containing code that can export portions of itself (export) and import code from other files (import)
+33,Medium,How do you clone an object (shallow copy) using ES6,Using the spread operator: const copy = { ...original };
+34,Medium,What is the purpose of the class keyword,It provides a cleaner syntax to create objects
+35,Medium,How do you inherit from a class,Using the extends keyword
+36,Medium,What is localStorage limit usually,Approximately 5MB per domain
+37,Medium,Does const make an object immutable,"No, it prevents reassignment of the variable identifier, but the properties of the object can still be changed"
+38,Medium,What is the arguments object,An array-like object accessible inside functions (except arrow functions) that contains the values of the arguments passed
+39,Medium,What is the difference between null and undefined in terms of usage,"undefined is the default value of uninitialized variables; null is a value explicitly assigned to indicate ""no value"""
+40,Medium,How does JSON.parse() work,It converts a JSON string into a JavaScript object
+41,Hard,Explain the Event Loop,"A mechanism that handles asynchronous callbacks. It constantly checks if the Call Stack is empty; if so, it pushes tasks from the Callback Queue/Microtask Queue to the stack"
+42,Hard,What is the difference between Microtasks and Macrotasks,"Microtasks (Promises, queueMicrotask) have higher priority and run immediately after the current script; Macrotasks (setTimeout, I/O) run in the next loop iteration"
+43,Hard,What is a Closure Memory Leak,"When a closure holds a reference to a large variable in an outer scope, preventing the Garbage Collector from freeing that memory even if it's no longer needed"
+44,Hard,Explain Prototypal Inheritance vs. Classical Inheritance,Classical inheritance uses classes as blueprints. Prototypal inheritance uses objects linked to other objects (via the prototype chain) to share properties.
+45,Hard,What is the difference between __proto__ and prototype,prototype is a property of constructor functions used to build __proto__; __proto__ is the actual reference on an instance object pointing to its prototype
+46,Hard,How does the new keyword work internally,"It creates a new object, links its prototype to the constructor's prototype, binds this to the new object, and returns the object"
+47,Hard,What is the difference between Promise.all() and Promise.allSettled(),all() rejects immediately if one promise fails; allSettled() waits for all to finish regardless of success or failure
+48,Hard,What is a WeakMap,"A collection of key/value pairs where keys must be objects and are ""weakly"" held"
+49,Hard,What is a Proxy object,An object that wraps another object and intercepts operations (like reading/writing properties) allowing custom behavior
+50,Hard,What is Debouncing,A technique to ensure a function is not called too frequently; it waits for a pause in invocations before running
+51,Hard,What is Throttling,A technique to ensure a function is called at most once in a specified time period
+52,Hard,What is the purpose of Symbol primitive,"To create unique identifiers, often used for object property keys to avoid name collisions"
+53,Hard,How does JavaScript handle integers larger than 2^53 - 1,Using the BigInt data type
+54,Hard,What is the Critical Rendering Path,"The sequence of steps the browser takes to convert HTML, CSS, and JS into actual pixels on the screen"
+55,Hard,What is a Service Worker,"A script that runs in the background, separate from the web page, enabling features like offline caching and push notifications"
+56,Hard,What is a Polyfill,What is a Polyfill
+57,Hard,"What is ""Hoisting"" regarding classes","Unlike functions, classes are not hoisted (or rather, they are in the TDZ) and cannot be used before declaration"
+58,Hard,What is Tail Call Optimization (TCO),An optimization where the engine reuses the stack frame for the last function call in a function to prevent stack overflow in recursion (supported in strict mode in some engines)
+59,Hard,What is a Memory Leak and how do you detect it,"Unwanted memory retention; detected using Chrome DevTools ""Memory"" tab (Heap Snapshots)"
+60,Hard,What is the Shadow DOM,"A way to attach a hidden, separate DOM tree to an element, providing encapsulation for CSS and JS (used in Web Components)"

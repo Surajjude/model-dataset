@@ -1,0 +1,52 @@
+QuestionID,Difficulty,Question,Answer
+1,Easy,Lets start with the basics what exactly is PostgreSQL,Postgresql often called Postgres is an advanced open source object relational database management system its known for its reliability and its ability to handle complex data workloads
+2,Easy,What is the primary difference between a primary key and a unique key,a table can have only one primary key and it cannot be null a unique key allows for null values and you can have multiple unique keys in one table
+3,Easy,What data type would you use for a true false value,The boolean data type
+4,Easy,How do you add a new column to an existing table,Using the alter table command
+5,Easy,What command is used to delete all records from a table without deleting the table itself,You can use truncate or delete
+6,Easy,How do you sort the results of a query,Using the order by clause followed by asc for ascending or desc for descending
+7,Easy,What is the difference between varchar and text in Postgres,In Postgres there is no performance difference varchar n has a limit while text is for strings of unlimited length
+8,Easy,What is the like operator used for,it used for pattern matching for example where name like a% finds all names starting with a
+9,Easy,What is the difference between delete and drop,delete removes rows from a table drop removes the entire table structure from the database
+10,Easy,How do you handle case insensitive text searching,I can use the ilike operator instead of like or use the lower function on the column
+11,Easy,What is the difference between rollback and abort,in postgres they are synonyms both will cancel the current transaction and discard all changes
+12,Easy,How do you check the version of the postgres server,Using the query select version
+13,Easy,What is the default port for Postgres,The default port is 5432
+14,Easy,How do you log into the postgres command line interface,We use the command line tool called psql
+15,Easy,if i am inside psql how do i list all the tables in my database,You just use the shortcut command \dt
+16,Easy,What is the search path,Its a setting that tells Postgres which schemas to look in when you reference a table without a schema prefix
+17,Easy,What is postgis,Its the most famous postgres extension it adds support for geographic objects allowing you to run locationbased queries
+18,Intermediate,Explain the difference between inner join and left join, inner join returns rows only when there is a match in both tables left join returns all rows from the left table even if there are no matches in the right table
+19,Intermediate,What is a schema in postgresql,A schema is a namespace that contains named objects like tables views and indexes its a way to organize database objects into logical groups
+20,Intermediate,How do you prevent duplicate entries in a column that isnt a Primary Key,By applying a unique constrain to that column
+21,Intermediate,What is an aggregate Function,These functions perform a calculation on a set of values and return a single value
+22,Intermediate,How do you filter results based on an aggregate function like show departments with more than 10 employees,You must use the having clause after the group by because where cannot be used with aggregate functions
+23,Intermediate,What is a foreign key,its a column that creates a link between data in two tables it ensures referential integrity by pointing to a primary key in another table
+24,Intermediate,Does Postgres support json data,Yes it has excellent support for json and jsonb jsonb is the binary version which is faster to process and supports indexing
+25,Intermediate,What is a view,A view is essentially a stored query it acts like a virtual table that you can query but it doesnt store the data itself
+26,Intermediate,What is an index and why should we use it,An index is a structure that speeds up data retrieval without it postgres has to do a sequential scan which is very slow for large tables
+27,Intermediate,Then what is a composite index,Its an index created on multiple columns at once its very useful if your where clause frequently filters by those specific columns together
+28,Intermediate,How do you start and finish a transaction in postgres,You start with begin and end with commit if something goes wrong you use rollback
+29,Intermediate,What is a trigger,A trigger is a function that automatically runs when a specific event occurs like an insert update or delete on a table
+30,Intermediate,What is coalesce,Its a function that returns the first non null value in a list great for setting default values
+31,Intermediate,How do you back up a postgres database,The most common way is using the pg_dump utility
+32,Intermediate,How do you find the size of a table,Using the function pg_total_relation_size('table_name')
+33,Intermediate,What is an array data type in postgres,Postgres allows a column to store an array of values you would use it for things like tags on a blog post so you dont always need a separate mapping table
+34,Intermediate,What is the difference between a row level lock and a table level lock,A row level lock only blocks other transactions from modifying specific rows a table level lock blocks the entire table
+35,Advanced,What is the effective cache size setting,Its a hint to the query planner about how much memory is available for disk caching by the operating system
+36,Advanced,Can postgres handle millions of connections,Not natively because each connection is a process to handle that many you must use a connection pooler like pgbouncer
+37,Advanced,What is the lateral join,Its like a foreach loop in sql it allows a subquery to refer to columns provided by preceding form items
+38,Advanced,Can I join two tables from two different Postgres databases,Yes by using the postgres_fdw extension it allows you to access external tables as if they were local
+39,Advanced,How do you identify the slowest queries in your database,I would use the pg_stat_statements extension it tracks execution statistics for all queries run on the server
+40,Advanced,What is streaming replication,It is a method where the primary server sends wal records to the standby server in real time to keep them in sync
+41,Advanced,What is the purpose of commit prepared ,Its used for two phase commit which allows a transaction to be prepared on one server and committed later often across multiple databases
+42,Advanced,What is row level security,It is a security feature where you can define policies so that users can only see specific rows
+43,Advanced,Explain the isolation levels in postgres,There are four read uncommitted read committed repeatable read and serializable they control how visible changes from other transactions are
+44,Advanced,What is the maximum size of a single row in postgres,Technically its 1.6 tb but individual fields are limited to 1 gb via a mechanism called toast
+45,Advanced,What is toast,Toast is how postgres handles large values it compresses them or moves them to a separate side table so the main table stays lean
+46,Advanced,What is a brin index and when should i use it,Brin stands for block range index it is designed for very large tables where the data is naturally sorted it is much smaller than a b tree index
+47,Advanced,What is a cte,cte stands for common table expression it is a temporary result set defined using the with clause it makes complex queries much more readable than using subqueries
+48,Advanced,Can a cte be recursive,Yes recursive ctes are great for querying hierarchical data like an organizational chart or a family tree
+49,Advanced,What if two people have the same salary how do you handle ties in ranking,In that case i would use window functions like rank function or dense rank function they allow you to rank rows within a partition of a result set
+50,Advanced,What is replication,it is the process of copying data from a master server to one or more replica servers for load balancing or backup
+51,Advanced,Great final question if you could only use one tool to monitor postgres what would it be,I would say pgadmin for a gui experience or pg stat activity for direct real-time insights

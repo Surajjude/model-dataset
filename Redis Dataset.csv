@@ -1,0 +1,53 @@
+QuestionID,Difficulty,Question,Answer
+1,Easy,What is Redis,Redis stands for Remote Dictionary Server it is an open source in-memory NoSQL key value store primarily used as a cache or a fast response database
+2,Easy,Why is Redis considered so fast,Because it stores and serves data entirely from RAM rather than from a disk or SSD
+3,Easy,What kind of data can i actually store in Redis is it just strings,No besides strings you have lists hashes sets and sorted sets
+4,Easy,How do I see how much memory Redis is currently using,You can use the info memory command it gives a detailed breakdown of used memory peak memory and fragmentation
+5,Easy,Can I store a negative value in Redis ,Yes absolutely
+6,Easy,What is the difference between sismember and smembers,sismember checks if a specific value exists in a set while smembers returns every single item in that set
+7,Easy,What if I want to append text to an existing string key,There is an append command it adds the value to the end of the current string and returns the new total length
+8,Easy,What is the type command used for,It tells you the data structure of the key whether it is a string list set zset or hash
+9,Easy,Does Redis support IPv6,Yes since version 2.8
+10,Easy,How do you stop a running Redis server,Using the command shutdown It saves the data to disk before closing
+11,Easy,Can you set multiple TTLs on one key,No only one TTL per key
+12,Easy,How do you see the uptime of the server,Under the info server section
+13,Easy,Is it possible to undo a flushall ,No once its gone its gone unless you have a backup RDB file
+14,Easy,What is lindex ,It gets an element from a list by its index
+15,Easy,Can I use Redis on a Raspberry Pi,Yes it’s very lightweight and runs great on small ARM devices
+16,Easy,Is Redis single threaded,Yes the core execution is single-threaded to avoid locking overhead
+17,Easy,Is there a way to increment a value inside a Hash,Yes using hincrby
+18,Intermediate,Lets say I want to store a User object with a name email and age which data type is best,A hash would be perfect for that It allows you to store multiple field value pairs under a single key which is very memory efficient
+19,Intermediate,What if I have a list of tasks and I want to add a new task to the very beginning,You would use LPUSH It adds the element to the head of the list
+20,Intermediate,And if I want to get that task and remove it at the same time,use LPOP to take it from the beginning or RPOP if treating the list like a queue
+21,Intermediate,What is the main difference between a Set and a List,Lists are ordered and allow duplicate values sets are unordered and automatically handle uniqueness you can't have the same member twice
+22,Intermediate,Can you explain what Pipelining is,Pipelining is when the client sends a batch of commands to the server all at once without waiting for the replies in between It saves a lot of time by reducing network round trips
+23,Intermediate,What happens if i try to add a member to a set that’s already there,The SADD command will simply return 0 and nothing changes because Sets only store unique members
+24,Intermediate,What is a cache miss,when the application looks for data in Redis but it is not there the app then has to go to the slower primary database to fetch it
+25,Intermediate,Suppose i want to find the intersection of two sets is there a command for that,Yes SINTER it is very useful for things like finding common friends between two users
+26,Intermediate,Is there a way to increment a value inside a Hash,Yes using HINCRBY
+27,Intermediate,If i am using RDB can i lose data,Yes since RDB saves at intervals if the server crashes between saves you lose everything since the last snapshot
+28,Intermediate,Then why use RDB at all,It is great for backups it is a single compact file that you can easily move to s3 or another server for disaster recovery
+29,Intermediate,What is the MONITOR command and when should you use it,It shows every single command the server is processing in real time it is great for debugging but terrible for performance so i had never leave it running in production
+30,Intermediate,How do you secure a Redis instance,First i would bind it to localhost or a private VPC then i would enable a strong password using requirepass and rename dangerous commands like FLUSHALL
+31,Intermediate,If i have 100 Sentinels and 1 master is that a good setup,Usually 3 or 5 Sentinels are enough you just need an odd number to reach a Quorum for voting
+32,Intermediate,How do you rename a key safely,I would use RENAME if i want to ensure i dont overwrite an existing key i would use RENAMENX
+33,Intermediate,Redis vs Memcached why choose Redis,Redis has data structures persistence and replication but Memcached is just a simple string cache
+34,Intermediate,What is the complexity of getting a value from a Hash,It is O(1)
+35,Advanced,Explain the difference between RDB and AOF persistence and which one would you choose,RDB takes snapshots at intervals while AOF logs every single write command I would usually use both AOF for better data safety and RDB for faster backups and restarts
+36,Advanced,If my Redis instance is running out of memory what does it do,It follows an Eviction Policy for example with LRU it will delete the oldest least used keys to make room for new ones
+37,Advanced,Is Redis replication synchronous,No it is asynchronous the master returns success to the client after writing locally and then propagates the data to replicas in the background
+38,Advanced,How does AOF handle a situation where the disk is full and the log gets corrupted,Redis provides a tool called redis check aof that can fix the file by removing the partially written command at the end
+39,Advanced,Explain the SCAN command Why is it better than KEYS *,KEYS * blocks the entire server until it finishes scanning SCAN uses a cursor to give you the keys in small batches so the server stays responsive
+40,Advanced,If I delete a million keys at once using a script what happens,The server might freeze for a few seconds to avoid this I would  use a script to delete them in smaller batches or use the UNLINK command
+41,Advanced,Can I set an expiration for a single field inside a Hash,No Redis only supports expiration for the entire key if you need field level expiration you would have to manage that logic in your application code
+42,Advanced,What is Object Sharing in Redis,To save memory Redis shares small integer objects internally so it doesnt have to create a new object every time
+43,Advanced,What is Client side Caching in Redis 6,It is a feature where Redis notifies the application when a key has changed so the application can safely keep a local copy of the data
+44,Advanced,How do you handle Hot Keys,If one key is getting millions of hits i might create replicas of that key  or use a local cache in the app layer to reduce the load on Redis
+45,Advanced,What is Redis Serialization Protocol,It is the simple text-based protocol that Redis clients use to talk to the Redis server
+46,Advanced,What is a Bloom Filter and why use it with Redis,It is a space efficient way to check if an item might exist we use it to prevent Cache Penetration by filtering out requests for ids that definitely arent in our database
+47,Advanced,What is a Dirty Key in AOF,It is a key that has been modified in memory but not yet synced to the AOF file on disk
+48,Advanced,What is a Stream in Redis,A data structure for append only logs it is great for event sourcing or building a message bus with consumer groups
+49,Advanced,How does Redis handle expiration internally,Two ways passive when the key is accessed and active it periodically tests random keys and deletes expired ones
+50,Advanced,Does Redis support ACID transactions,Partially it supports atomicity and isolation but not full durability in the way a sql database does
+51,Advanced,What is a Redis Module,A dynamic library that you can load into Redis to add new data types or features like RedisJSON or RedisGraph
+52,Advanced,Finally why should we hire you as a Redis expert,Because i understand not just how to use the commands but how Redis manages memory persistence and scaling to build high performance systems

@@ -1,0 +1,52 @@
+QuestionID,Difficulty,Question,Answer
+1,Easy,what exactly is mongodb and how is it different from sql,Mongodb is a nosql document oriented database unlike sql which uses tables and rows mongo uses collections and documents the big difference is that its schemaless meaning documents in the same collection dont have to have the same fields
+2,Easy,What is bson,It stands for binary json it is the format mongodb uses to store data like json but supports more data types like date and bindata and optimized for speed and space
+3,Easy,How do you start the mongodb shell,in the terminal you just type mongosh to connect to the running instance
+4,Easy,What is the default port for mongodb,the default port for mongodb is 27017
+5,Easy,What is a collection in mongodb,A collection is equivalent to a table in rdbms it is a group of mongodb documents
+6,Easy,How do you see all the databases on your server,Just type show dbs
+7,Easy,What command do you use to insert a single document,db.collection.insertOne({ ... })
+8,Easy,What is the id field,It is a unique identifier for every document if you dont provide one mongodb automatically generates an objectid for you
+9,Easy,How do you find a document where the name is Barrel,"db.users.find({ name: ""Barrel"" })"
+10,Easy,What is the 16mb limit,A single bson document in mongodb cannot exceed 16 megabytes
+11,Easy,What are roles in mongodb,They define permissions for examples read readwrite and dbadmin
+12,Easy,What is the mongod process,It is the primary daemon process for the mongodb system the server itself
+13,Easy,How do you check server status,db.serverStatus()
+14,Easy,What is mongodb atlas,mongodb atlas is the fully managed cloud version of mongodb provided as a service
+15,Easy,What is the use of push operator,It appends a new value to an array
+16,Easy,What is the use of pop,It removes either the first or the last element from an array
+17,Easy,How to rename a collection,"db.collection.renameCollection(""new_name"")"
+18,Intermediate,What is the difference between find and findone function,find returns a cursor to all matching documents while findone returns the actual first document that matches the criteri
+19,Intermediate,How do you update a specific field without overwriting the whole document,by use the set operator if you dont use set mongodb will replace the entire document with your new input
+20,Intermediate,How do you sort results in mongodb,Using the sort method Pass 1 for ascending and -1 for descending
+21,Intermediate,Explain projection in mongodb,Projection is used to select only the fields you need
+22,Intermediate,What are comparison operators in mongo,gt greater than lt less than gte greater or equal and ne not equal
+23,Intermediate,What does $match do in aggregation,It filters the documents similar to the find query or the where clause in sql it is best to put it at the start of the pipeline
+24,Intermediate,Can you sort inside an aggregation,yes using the operator $sort stage
+25,Intermediate,What is the primary node,The node that receives all write operations by default it also handles all reads unless configured otherwise
+26,Intermediate,Difference between vertical and horizontal scaling,Vertical is adding more ram and cpu to one server and  horizontal is adding more servers mongodb scales horizontally via sharding
+27,Intermediate,How do you handle one to many relationships,Either by nesting an array of sub documents or by storing the id of the parent in the child document
+28,Intermediate,How do you create a backup in mongodb,Using the mongodump utility to restore it you use mongorestore
+29,Intermediate,How do you find the current operations running on a server,db.currentOp()
+30,Intermediate,How do you update an item inside an array by its index,Using the dot notation like tags.0 to target the first item
+31,Intermediate,What is the size operator,It matches documents where an array is exactly a certain size
+32,Intermediate,What is the $regex operator,It allows you to search for strings using regular expressions
+33,Intermediate,How to count unique visitors,Use a Set and $addtoset with user ids or use an aggregation pipeline with $group
+34,Intermediate,How would you handle a search feature for blog posts,I would create a text index on the title and content fields and use the $text operator
+35,Advanced,Why indexes are important in mongodb,Without them mongodb has to do a collection scan indexes store a small portion of the data in a traversable form to speed up searches
+36,Advanced,What is a compound index,Compound index is an index on multiple fields
+37,Advanced,Explain covered queries,A query is covered if the index contains all the fields requested by the query mongodb doesnt even need to look at the documents themselves
+38,Advanced,What is a TTL Index,Time to live index it automatically removes documents from a collection after a certain amount of time
+39,Advanced,Can you index an array field,Yes thats called a multikey index mongodb creates an index entry for every element in the array
+40,Advanced,What is the aggregation pipeline,Aggregation pipeline is a framework for data processing you pass documents through stages like $match $group and $sort to transform them into a final result
+41,Advanced,What is the $unwind stage,If a document has an array $unwind breaks it into multiple documents one for each element in the array this lets you run operations on individual array items
+42,Advanced,How to implement a global search across all collections,Mongodb doesnt support this natively you would either need to aggregate results in the app or use atlas Search
+43,Advanced,How do you handle concurrency when two users update the same document,Mongodb uses optimistic locking we can also implement a version field or use atomic operators like $set to ensure one doesnt wipe the other
+44,Advanced,A user changes their username how do you update it across the app,If i referenced the user id i only update the user document if i embedded the username everywhere I would  have to run an updatemany across multiple collections
+45,Advanced,What is the $expr operator,It allows you to use aggregation expressions within a regular query like comparing two fields in the same document
+46,Advanced,What is the positional operator,Positional operator is used in an update to identify the specific element in an array that matched your query filter
+47,Advanced,What is journaling,It is a log that helps mongodb recover in case of a crash by keeping track of data changes before they are written to the data files
+48,Advanced,What is polymorphic schema,when documents in a collection have different structures but represent the same general entity
+49,Advanced,Is mongodb acid compliant,Yes since version 4.0 mongodb supports multi document transactions with acid properties
+50,Advanced,Can you join three collections,Yes by chaining multiple $lookup stages in an aggregation pipeline
+51,Advanced,Why is mongodb called scalable,Because of sharding you can keep adding cheap commodity hardware to a cluster to handle more data and traffic without a single massive server

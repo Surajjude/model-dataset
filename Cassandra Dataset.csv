@@ -1,0 +1,52 @@
+QuestionID,Difficulty,Question,Answer
+1,Easy,How would you describe cassandra to someone who only knows sql,Cassandra is a distributed nosql database designed to handle massive amounts of data across many servers unlike sql it has no single point of failure and scales linearly
+2,Easy,What is the default port for cassandra,9042 for the native transport protocol
+3,Easy,What is the query language used in cassandra and is it standard sql,Cql cassandra query language and it looks very similar to sql but it doesnt support joins or subqueries
+4,Easy,How do you log into the cassandra shell,We use the cqlsh command-line interface
+5,Easy,What is a keyspace,A keyspace is the outermost container for data similar to a database in mysql or postgres it defines how data is replicated across nodes
+6,Easy,What is a node and a cluster,A node is a single machine running cassandra and a cluster is a collection of nodes that work together as one logical unit
+7,Easy,How do you see the status of your cluster,I would use the nodetool status command in the terminal
+8,Easy,Can cassandra work without a network,You can run a single node cluster for development but the whole point of cassandra is its distributed nature over a network
+9,Easy,What is nodetool describecluster ,It gives you a summary of the cluster showing the name the snitch and the partitioner being used
+10,Easy,How do you find the version of cassandra you are running,Inside cqlsh it shows at the top or i can run cassandra -v
+11,Easy,Is cassandra schema less,No it is schema optional for some things but you definitely have to define tables and columns its not like mongodb where you can just throw in any json
+12,Easy,What is the replication factor,It is the number of copies of data you want to store in the cluster if rf=3 every row is stored on three different nodes
+13,Easy,What is consistency level,the number of nodes that must acknowledge a read or write for it to be successful common levels are one quorum and all
+14,Easy,Why is denormalization okay in cassandra,Because disk space is cheap and writes are fast we favor read performance over storage efficiency
+15,Easy,Can i use aggregates like sum or avg,Yes cassandra supports basic aggregates but they only work efficiently within a single partition running them across the whole table is very slow
+16,Easy,What is the networktopologystrategy,the replication strategy we use for production it allows us to specify how many replicas we want in each specific data center
+17,Easy,What is a seed node,Seed nodes are used as contact points for new nodes joining the cluster to discover the ring topology
+18,Intermediate,Explain the concept of gossip in cassandra,gossip is a peer to peer protocol where nodes talk to each other every second to share state info like who is up who is down and who has joined the ring
+19,Intermediate,What is the partition key,It is the part of the primary key that determines data distribution all rows with the same partition key are stored together on the same physical node
+20,Intermediate,What is a clustering key,it is the second part of the primary key it determines the sorting order of the data within a partition
+21,Intermediate,Can i change my primary key after creating a table,No in cassandra data is physically stored based on the key if you need a new key you have to create a new table and migrate the data
+22,Intermediate,What is a snitch,A snitch maps the ip addresses of nodes to physical locations like datacenters and racks it helps cassandra avoid placing all replicas on the same rack
+23,Intermediate,How does cassandra handle a write operation,Actually writes are extremely fast because cassandra writes to a commit log and then a memory structure called a memtable it doesnt wait for a disk seek
+24,Intermediate,What is hinted handoff in cassandra,If a node is down during a write the coordinator node stores a hint once the target node comes back online the coordinator hands off the missed data
+25,Intermediate,How do you implement a counter column,You use the counter data type it can only be incremented or decremented you can not manually set it to a specific value
+26,Intermediate,How do you add a new node to an existing cluster,You install cassandra on the new machine point the seeds to the existing cluster and it will automatically start streaming data to balance itself
+27,Intermediate,How do you back up data in cassandra,by use the nodetool snapshot command which creates hard links to the current sstables
+28,Intermediate,Why use cassandra over mongodb,Choose cassandra for high write availability and massive scale across multiple datacenters choose mongodb if you need flexible schemas and complex document queries
+29,Intermediate,Can i use order by on any column i want in cassandra,No thats a common mistake you can only use order by on clustering columns and even then only within a single partition you can not sort data globally across the whole cluster
+30,Intermediate,What is the difference between a set and a list in cassandra,A set stores unique values and is unordered a list allows duplicates and preserves order sets are generally more performant because they dont require the internal read before write that lists often do
+31,Intermediate,How do you change the replication factor of an existing keyspace,I use alter keyspace after that i must run nodetool repair on all nodes to ensure the new replicas are created
+32,Intermediate,What is the purpose of nodetool drai,It flushes all memtables to disk and stops the node from listening to the network we usually run this before upgrading or stopping the service
+33,Intermediate,Can cassandra handle updates that increase row size,Yes but internally it just writes a new version of the row the old one is cleaned up later during compaction
+34,Intermediate,What is the smallest recommended cluster size for production,3 nodes this allows you to have a replication factor of 3 and still maintain a quorum if one node fails
+35,Advanced,Explain the read path how does cassandra find data across multiple sstables,It checks the memtable first then uses bloom filters and index summaries to quickly narrow down which sstables might contain the data on disk
+36,Advanced,What is a bloom filter,a memory efficient structure that tells you if a key definitely does not exist in an sstable it saves a lot of unnecessary disk input output
+37,Advanced,Explain anti entropy repair,it is a process run using nodetool repair that compares merkle trees between nodes to ensure all data is perfectly synchronized
+38,Advanced,How do you design a table in cassandra do you follow third normal form,Absolutely not in cassandra we use query driven modeling we design the table specifically to satisfy one query even if it means duplicating data
+39,Advanced,What happens to the data in the memtable,Once the memtable is full it is flushed to the disk into an immutable file called an sstable
+40,Advanced,Wait if sstables are immutable how do you delete data,cassandra doesnt delete data immediately it writes a marker called a tombstone during compaction the old data and the tombstone are finally purged
+41,Advanced,What is the commit log,Commit log is a crash recovery mechanism every write is logged there first if the server loses power before the memtable is flushed cassandra replays the commit log to recover data
+42,Advanced,Explain anti entropy repair,It is a process run using nodetool repair that compares merkle trees between nodes to ensure all data is perfectly synchronized
+43,Advanced,What is a merkle tree,Merkle tree is a hash tree used to find differences in data between nodes without sending the actual data over the network
+44,Advanced,What is a materialized view in cassandra, Materialized view is a table that cassandra manages automatically to allow querying the same data with a different Primary Key
+45,Advanced,What happens if a node stays down for a long time,The hints are deleted you must run a manual nodetool repair once the node comes back to ensure it gets the missed data
+46,Advanced,What is the jmx interface used for,Jmx interface used for monitoring and managing the cassandra process through tools like jconsole or prometheus
+47,Advanced,Explain multi dc replication,You can have one cluster span across two different physical datacenters cassandra handles the cross region replication automatically
+48,Advanced,How do you refresh a table after manually adding an sstable file,I use nodetool import or the older sstableloader tool
+49,Advanced,What is a custom payload in cql,It is a way for clients to send extra metadata to custom query handlers or triggers on the server side
+50,Advanced,Does cassandra support acid,It supports atomicity and isolation at the row level but it does not support multi table transactions like a sql database
+51,Advanced,When should you not use cassandra,If your data is small if you need complex joins or if your query patterns change every day cassandra is for massive predictable workloads

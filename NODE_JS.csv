@@ -1,0 +1,61 @@
+﻿QID,Difficulty,Questions,Answers
+1,Easy,command to initialize a new Node.js project,npm init
+2,Easy,How do you install Express.js in your project,npm install express
+3,Easy,What function is used to start an Express server,"app.listen(port, callback)"
+4,Easy,How do you send a JSON response in Express,res.json({ key: 'value' })
+5,Easy,What is the purpose of node_modules,It contains all the installed dependency packages/libraries
+6,Easy,How do you export a function named myFunc from a module,module.exports = myFunc; or exports.myFunc = myFunc;
+7,Easy,How do you read a file asynchronously in Node.js,Using fs.readFile()
+8,Easy,How do you access environment variables in Node.js,process.env.VARIABLE_NAME
+9,Easy,What middleware parses incoming JSON payloads,express.json()
+10,Easy,What is the purpose of the next argument in a middleware function,It passes control to the next middleware function in the stack
+11,Easy,"What HTTP status code represents ""Not Found""",404
+12,Easy,"What HTTP status code represents ""Internal Server Error""",500
+13,Easy,How do you stop a running Node process in the terminal,Ctrl + C
+14,Easy,How do you import a local file named helper.js,const helper = require('./helper');
+15,Easy,What is the command to uninstall a package,npm uninstall package-name
+16,Easy,What is nodemon used for,Automatically restarting the Node application when file changes are detected
+17,Easy,How do you access the request body in Express,req.body
+18,Easy,Is require synchronous or asynchronous,Synchronous
+19,Easy,Which object allows you to access dynamic route parameters,req.params
+20,Easy,How do you import the http module in Node.js,const http = require('http');
+21,Medium,What is the difference between app.use() and app.get(),"app.use() applies middleware to all requests (or a specific path prefix), whereas app.get() only matches GET requests for a specific route"
+22,Medium,How do you handle 404 errors in Express,Add a middleware function at the very end of the stack that sends a 404 response
+23,Medium,"Explain the concept of ""Error Handling Middleware""","It is a function with 4 arguments: (err, req, res, next). Express recognizes this signature as an error handler"
+24,Medium,Why shouldn't you block the Event Loop,Because Node.js is single-threaded; blocking it prevents the server from handling any other incoming requests
+25,Medium,How do you safely handle secrets (API keys) in Node,Use environment variables (via dotenv package) and never commit .env files to version control
+26,Medium,How do you execute multiple asynchronous tasks in paralle,Using Promise.all()
+27,Medium,What is the purpose of express.Router(),"It creates modular, mountable route handlers (mini-apps) to organize routes into separate files"
+28,Medium,What is the difference between res.send() and res.json(),"res.json() enforces proper JSON headers and formatting, while res.send() automatically detects content type (text/html/json) based on the data"
+29,Medium,"What is a ""Stream"" in Node.js",An abstract interface for working with streaming data
+30,Medium,How does Node.js handle file uploads,Typically using middleware like multer or express-fileupload to handle multipart/form-data
+31,Medium,What is the difference between spawn and exec in the child_process module,"spawn returns a stream (better for large data/long processes), while exec buffers the output and returns it all at once (better for small commands)"
+32,Medium,What is a JWT (JSON Web Token),A stateless way to handle authentication where a signed token is sent to the client and sent back with requests to verify identity
+33,Medium,What is the default timeout for a Node.js HTTP server,"Typically 2 minutes (120,000 ms), but it is configurable"
+34,Medium,"What is the ""Callback Pattern""",Passing a function as an argument to handle the result (error or data) of an asynchronous operation once it completes
+35,Medium,Why do we prefer async/await over callbacks,"It avoids ""Callback Hell"" and makes asynchronous code look and behave more like synchronous code, improving readability"
+36,Medium,What is the difference between dependencies and peerDependencies,dependencies are required to run the app; peerDependencies expect the host project to have a specific version of a package installed (common in plugins)
+37,Medium,How do you connect to a MongoDB database in Node,Typically using the mongoose library or the native mongodb driver
+38,Medium,What happens if you try to res.send twice in the same reques,"Express will throw an error: ""Error: Can't set headers after they are sent"
+39,Medium,How do you structure a large Express application,"MVC Pattern (Model-View-Controller) or separating into routes, controllers, services, and models folders"
+40,Medium,What is Cross-Origin Resource Sharing (CORS),A browser security feature; you handle it in Express using the cors middleware to allow requests from different domains
+41,Hard,Explain the Phases of the Node.js Event Loop,Timers -> Pending Callbacks -> Idle/Prepare -> Poll (I/O) -> Check (setImmediate) -> Close Callbacks
+42,Hard,"Node.js is single-threaded, but how does it handle file I/O operations concurrently","libuv uses a thread pool (default 4 threads) to handle ""expensive"" tasks like file I/O and crypto off the main thread"
+43,Hard,What is the Cluster Module,"A module that allows you to create child processes (workers) that share the same server port, enabling Node to utilize multi-core systems"
+44,Hard,"What are ""Worker Threads""","A module (worker_threads) that enables true multi-threading for CPU-intensive JavaScript tasks (unlike Cluster, which splits processes)"
+45,Hard,How would you debug a Memory Leak in Node.js,"Using Chrome DevTools ""Memory"" tab (Heap Snapshots), looking for detached objects or huge closures"
+46,Hard,What is Backpressure in Streams,When the data buffer fills up faster than the consumer can process it; .pipe() handles this automatically by pausing the readable stream
+47,Hard,Difference between Horizontal Scaling and Vertical Scaling in Node,Vertical: Adding more RAM/CPU to the single server. Horizontal: Adding more server instances and using a Load Balancer
+48,Hard,"What is a Reverse Proxy (e.g., Nginx) and why use it with Node","It sits in front of Node, handling SSL termination, static files, compression, and load balancing, protecting the Node process"
+49,Hard,What is Buffer in Node.js,"A global class to handle binary data (raw memory allocation) directly, necessary because JS originally only handled strings"
+50,Hard,"Explain ""Keep-Alive"" in HTTP and how it affects Node","It keeps the TCP connection open for multiple requests, reducing handshake overhead. Node enables this by default in recent versions"
+51,Hard,Difference between fork() and spawn(),fork is a special case of spawn specifically for Node processes; it establishes an IPC (Inter-Process Communication) channel between parent and child.
+52,Hard,How does Express handle template engines,"Using app.set('view engine', 'pug') and res.render()"
+53,Hard,"What is ""Middleware Chaining""",The mechanism where multiple middleware functions are executed in sequence using next(
+54,Hard,How do you gracefully shut down a Node server,"Listen for SIGTERM/SIGINT signals, stop accepting new connections (server.close()), finish pending requests, close DB connections, then exit"
+55,Hard,What is the difference between TCP and UDP,"TCP is reliable/ordered (HTTP, WebSockets); UDP is fast/unreliable (Video streaming, DNS). Node supports both via net and dgram modules"
+56,Hard,"What is a ""Zombie Process""",A child process that has completed execution but still has an entry in the process table
+57,Hard,How does Node.js Garbage Collection work,"It uses V8's ""Mark-and-Sweep"" algorithm. It pauses execution (Stop-the-World) to free memory, which is why optimizing memory usage is critical"
+58,Hard,"What is ""Event Emitter"" synchronous or asynchronous","Synchronous by default. When you .emit(), all listeners are called immediately in order"
+59,Hard,What is the maximum size of a single Buffer in Nod,"On 64-bit systems, it is usually 2GB"
+60,Hard,What is REPL,Read-Eval-Print Loop. The interactive shell you get when you type node in the terminal
