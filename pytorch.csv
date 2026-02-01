@@ -1,0 +1,51 @@
+﻿Serial No,Difficulty,Question,Answer
+1,Easy,What is PyTorch?,"PyTorch is an open-source deep learning framework developed by Facebook AI Research. It is primarily used to build, train, and deploy neural networks. One of its biggest strengths is its dynamic computation graph, which allows developers to define and modify models during runtime. PyTorch integrates seamlessly with Python, making debugging intuitive. It also provides strong GPU acceleration and a large ecosystem, which makes it suitable for both research and production use cases."
+2,Medium,What is a tensor in PyTorch?,"A tensor is the core data structure in PyTorch and represents a multi-dimensional array similar to NumPy arrays. However, PyTorch tensors support automatic differentiation and GPU acceleration. Tensors store input data, model parameters, intermediate computations, and gradients during training, making them central to deep learning workflows."
+3,Easy,How is PyTorch different from NumPy?,"PyTorch tensors resemble NumPy arrays but add automatic differentiation through autograd and support GPU execution. These features make PyTorch suitable for deep learning, while NumPy is primarily used for CPU-based numerical computation."
+4,Hard,Explain PyTorch’s dynamic computation graph.,"PyTorch builds computation graphs dynamically during runtime. This allows control flow such as loops and conditionals inside the model’s forward pass. Dynamic graphs improve flexibility, make debugging easier, and are well-suited for research and experimental architectures."
+5,Medium,What is autograd in PyTorch?,"Autograd is PyTorch’s automatic differentiation engine. It records tensor operations during the forward pass and computes gradients automatically during backpropagation using the chain rule, eliminating manual gradient calculations."
+6,Easy,How do you create a tensor in PyTorch?,"Tensors can be created using torch.tensor(), torch.zeros(), torch.ones(), torch.randn(), or by converting NumPy arrays into tensors. These methods allow flexible initialization depending on the use case."
+7,Hard,How does PyTorch handle backpropagation internally?,"PyTorch records all operations in a computation graph during the forward pass. When backward() is called, it traverses the graph in reverse and computes gradients using the chain rule, storing them in the .grad attribute of leaf tensors."
+8,Medium,What is the difference between requires_grad and torch.no_grad()?,"requires_grad enables gradient tracking for training, while torch.no_grad() disables it for inference. This reduces memory usage and improves performance during evaluation."
+9,Easy,What is a PyTorch model?,"A PyTorch model is typically a class inheriting from nn.Module. It defines layers in the constructor and specifies data flow in the forward method, making models modular and reusable."
+10,Hard,What are leaf tensors in PyTorch?,"Leaf tensors are user-created tensors with requires_grad=True. Gradients are stored only for leaf tensors after backpropagation, which is important for parameter updates."
+11,Medium,What is nn.Module?,"nn.Module is the base class for all neural network components in PyTorch. It manages parameters, supports device transfers, and enables saving and loading models."
+12,Easy,How do you move a tensor to GPU?,A tensor can be moved to GPU using .cuda() or .to('cuda') if a CUDA-enabled GPU is available.
+13,Hard,Explain gradient accumulation in PyTorch.,"Gradients accumulate by default in PyTorch. Calling backward() multiple times adds gradients, so optimizer.zero_grad() must be used to clear gradients before each update step."
+14,Medium,What is an optimizer in PyTorch?,"An optimizer updates model parameters using gradients. PyTorch provides optimizers like SGD, Adam, and RMSprop that differ in convergence behavior and stability."
+15,Easy,What does model.eval() do?,"model.eval() switches the model to evaluation mode, ensuring layers like dropout and batch normalization behave correctly during inference."
+16,Hard,How does Batch Normalization behave differently in training and evaluation?,"During training, batch normalization uses batch statistics. During evaluation, it uses running averages computed during training to ensure stable outputs."
+17,Medium,What is a loss function?,A loss function measures the difference between predicted outputs and actual targets. It guides the optimizer during training.
+18,Easy,What is torch.utils.data.Dataset?,It is an abstract class representing a dataset. Custom datasets implement __len__ and __getitem__ for efficient data loading.
+19,Hard,What is DataLoader and why is it important?,"DataLoader handles batching, shuffling, and parallel data loading, making training efficient and scalable."
+20,Medium,Difference between view() and reshape()?,"view() works only on contiguous tensors, while reshape() is more flexible and creates copies if required."
+21,Easy,What is a forward pass?,A forward pass processes input data through the model to produce predictions.
+22,Hard,Explain exploding and vanishing gradients.,"Exploding gradients cause unstable updates, while vanishing gradients slow learning. Techniques like normalization and gradient clipping help mitigate these issues."
+23,Medium,What is transfer learning in PyTorch?,"Transfer learning uses pretrained models as a starting point and fine-tunes them for new tasks, reducing training time and improving performance."
+24,Easy,What does torch.save() do?,torch.save() serializes model parameters or objects so they can be stored and reused later.
+25,Hard,What is mixed precision training?,Mixed precision training uses both 16-bit and 32-bit floating-point arithmetic to speed up training and reduce memory usage while maintaining accuracy.
+26,Medium,Difference between state_dict and full model save?,"state_dict saves only model parameters, making it flexible and portable, while full model saving includes architecture."
+27,Easy,What is a batch?,A batch is a subset of data processed together during training to balance performance and memory usage.
+28,Hard,Explain custom autograd functions.,Custom autograd functions define manual forward and backward logic for specialized operations.
+29,Medium,What is dropout?,Dropout randomly disables neurons during training to reduce overfitting and improve generalization.
+30,Easy,What is torch.zeros_like() used for?,It creates a zero-filled tensor with the same shape and type as another tensor.
+31,Hard,How does PyTorch support distributed training?,"PyTorch supports distributed training using torch.distributed, enabling multi-GPU and multi-node training."
+32,Medium,What is gradient clipping?,Gradient clipping limits gradient magnitude to stabilize training and prevent exploding gradients.
+33,Easy,What is a parameter in PyTorch?,A parameter is a learnable tensor registered within a model and updated during training.
+34,Hard,What is TorchScript?,TorchScript converts PyTorch models into a production-ready format that can run independently of Python.
+35,Medium,What is weight initialization?,Weight initialization sets starting values for parameters and significantly impacts convergence speed and stability.
+36,Easy,What does optimizer.step() do?,optimizer.step() updates model parameters using computed gradients.
+37,Hard,Explain memory leaks in PyTorch.,Memory leaks occur when computation graphs are unintentionally retained. Proper detaching and clearing references prevents this.
+38,Medium,What is detach() used for?,"detach() removes a tensor from the computation graph, stopping gradient flow."
+39,Easy,What is inference in PyTorch?,Inference is the process of using a trained model to make predictions on new data.
+40,Hard,Explain model parallelism vs data parallelism.,"Data parallelism splits data across devices, while model parallelism splits the model itself to scale training."
+41,Medium,What is learning rate?,The learning rate controls how much parameters change during optimization.
+42,Easy,What does torch.manual_seed() do?,It ensures reproducibility by fixing random number generation.
+43,Hard,What is checkpointing in PyTorch?,Checkpointing saves model states periodically so training can resume after interruptions.
+44,Medium,What is early stopping?,"Early stopping halts training when validation performance stops improving, preventing overfitting."
+45,Easy,What is a CUDA tensor?,A CUDA tensor resides on the GPU for faster computation.
+46,Hard,Explain custom loss functions.,Custom loss functions are defined to meet task-specific requirements using tensor operations.
+47,Medium,What is batch size?,Batch size determines how many samples are processed before model updates.
+48,Easy,What is torch.mean() used for?,torch.mean() computes the average of tensor elements.
+49,Hard,How does PyTorch handle device management?,PyTorch allows explicit movement of tensors and models between CPU and GPU for optimized execution.
+50,Easy,Why is PyTorch popular among researchers?,"PyTorch offers flexibility, dynamic graphs, and easy debugging, making it ideal for research and experimentation."

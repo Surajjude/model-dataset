@@ -1,0 +1,50 @@
+﻿Serial No,Difficulty,Question,Answer
+51,Medium,What is Support Vector Machine (SVM)?,Support Vector Machine is a supervised learning algorithm used for classification and regression. It works by finding an optimal hyperplane that maximizes the margin between different classes. SVM is effective in high-dimensional spaces and is commonly used for text classification and image recognition tasks.
+52,Hard,Explain the kernel trick in SVM.,"The kernel trick allows SVMs to handle non-linearly separable data by implicitly mapping input features into a higher-dimensional space. Instead of explicitly transforming the data, kernel functions such as linear, polynomial, and RBF compute similarity directly, making computation efficient."
+53,Easy,What is Naive Bayes classifier?,"Naive Bayes is a probabilistic classifier based on Bayes’ theorem and assumes independence between features. Despite this strong assumption, it performs well in many real-world problems, especially text classification and spam detection."
+54,Medium,What types of Naive Bayes algorithms are available in scikit-learn?,"Scikit-learn provides GaussianNB for continuous data, MultinomialNB for count-based data like text, and BernoulliNB for binary features. Each variant is designed for specific data distributions."
+55,Hard,When does Naive Bayes perform poorly?,"Naive Bayes performs poorly when features are highly correlated or when interactions between features significantly influence the outcome. In such cases, the independence assumption breaks down and reduces accuracy."
+56,Easy,What is K-Nearest Neighbors (KNN)?,"KNN is a simple, instance-based learning algorithm that makes predictions based on the majority class or average value of the nearest data points. It does not require an explicit training phase."
+57,Medium,Why is feature scaling important for KNN?,"KNN relies on distance calculations to identify neighbors. If features are on different scales, features with larger values dominate distance calculations, leading to biased predictions. Scaling ensures fair contribution of all features."
+58,Hard,Explain the curse of dimensionality.,"As the number of features increases, data becomes sparse and distance measures become less meaningful. This negatively affects algorithms like KNN and clustering, often requiring dimensionality reduction techniques."
+59,Easy,What is MinMaxScaler?,"MinMaxScaler rescales features to a fixed range, usually between 0 and 1. It preserves relative relationships while ensuring consistent feature scales."
+60,Medium,When should MinMaxScaler be preferred over StandardScaler?,"MinMaxScaler is preferred when data has known bounds or when algorithms require bounded input values, such as neural networks or distance-based models."
+61,Hard,What is RobustScaler and when is it used?,"RobustScaler scales features using the median and interquartile range, making it robust to outliers. It is useful when datasets contain extreme values that distort mean-based scaling."
+62,Easy,What is dimensionality reduction?,"Dimensionality reduction reduces the number of input features while retaining important information. It improves model performance, reduces overfitting, and helps visualize high-dimensional data."
+63,Medium,What is the difference between PCA and LDA?,"PCA is an unsupervised technique that maximizes variance, while LDA is a supervised technique that maximizes class separability using label information."
+64,Hard,Explain t-SNE and its limitations.,"t-SNE is a nonlinear dimensionality reduction technique mainly used for visualization. It preserves local structure but is computationally expensive, sensitive to hyperparameters, and unsuitable for large datasets or inference."
+65,Easy,What is feature selection?,"Feature selection involves choosing the most relevant features for model training. It improves performance, reduces overfitting, and enhances interpretability."
+66,Medium,"What are filter, wrapper, and embedded feature selection methods?","Filter methods use statistical measures, wrapper methods evaluate subsets using models, and embedded methods perform feature selection during model training itself."
+67,Hard,Explain Recursive Feature Elimination (RFE).,"RFE recursively removes the least important features based on model coefficients or feature importance until the desired number of features is reached, resulting in an optimal subset."
+68,Easy,What is a baseline model?,A baseline model is a simple reference model used to compare performance and determine whether more complex models provide meaningful improvements.
+69,Medium,What is class imbalance in datasets?,Class imbalance occurs when one class significantly outnumbers others. This can bias models toward majority classes and reduce performance on minority classes.
+70,Hard,How does scikit-learn handle imbalanced datasets?,"Scikit-learn supports class weighting, resampling techniques, and evaluation metrics like F1-score and ROC-AUC to address class imbalance effectively."
+71,Easy,What is resampling?,Resampling involves oversampling minority classes or undersampling majority classes to balance datasets and improve model learning.
+72,Medium,What is SMOTE?,"SMOTE generates synthetic samples for minority classes by interpolating between existing samples, helping reduce bias without duplicating data."
+73,Hard,What is probability calibration in scikit-learn?,Probability calibration adjusts predicted probabilities so they better represent true likelihoods using techniques like Platt scaling or isotonic regression.
+74,Easy,What is model evaluation?,Model evaluation assesses how well a trained model performs on unseen data using appropriate performance metrics.
+75,Medium,What does cross_val_score() do?,cross_val_score() evaluates a model using cross-validation and returns performance scores across different folds.
+76,Hard,Explain nested cross-validation.,"Nested cross-validation separates hyperparameter tuning and model evaluation into inner and outer loops, preventing overly optimistic performance estimates."
+77,Easy,What are regression evaluation metrics?,"Regression metrics such as MAE, MSE, and RMSE measure prediction error for continuous outputs."
+78,Medium,Difference between MAE and MSE.,"MAE measures average absolute error, while MSE squares errors, giving more weight to large mistakes."
+79,Hard,Explain R² score and its limitations.,"R² measures how much variance is explained by the model, but it can be misleading for non-linear models or when evaluated on unseen data."
+80,Easy,What is a learning curve?,A learning curve shows how model performance changes with increasing training data and helps diagnose underfitting or overfitting.
+81,Medium,What is a validation curve?,A validation curve shows how model performance varies with different hyperparameter values.
+82,Hard,How can learning curves help detect bias?,"High training and validation errors indicate high bias, meaning the model is too simple to capture underlying patterns."
+83,Easy,What is model persistence?,Model persistence refers to saving trained models to disk so they can be reused without retraining.
+84,Medium,How do you save and load models in scikit-learn?,"Models are commonly saved and loaded using joblib or pickle, which store trained parameters efficiently."
+85,Hard,What are the risks of using pickle for model storage?,"Pickle files can execute arbitrary code when loaded, making them unsafe if the source is untrusted."
+86,Easy,What is feature engineering?,"Feature engineering involves creating, transforming, or combining features to improve model performance."
+87,Medium,What are polynomial features?,"Polynomial features generate interaction and higher-degree features, enabling linear models to learn non-linear relationships."
+88,Hard,Explain partial dependence plots.,Partial dependence plots visualize how individual features affect model predictions while averaging out other features.
+89,Easy,What is anomaly detection?,Anomaly detection identifies rare or unusual data points that deviate significantly from normal patterns.
+90,Medium,What anomaly detection algorithms does scikit-learn provide?,"Scikit-learn provides algorithms such as Isolation Forest, One-Class SVM, and Local Outlier Factor for anomaly detection."
+91,Hard,Explain Isolation Forest.,"Isolation Forest detects anomalies by randomly partitioning data. Anomalies require fewer splits to isolate, making detection efficient."
+92,Easy,What is text vectorization?,Text vectorization converts textual data into numerical representations that machine learning models can process.
+93,Medium,Difference between CountVectorizer and TfidfVectorizer.,"CountVectorizer counts word occurrences, while TfidfVectorizer scales counts by word importance across documents."
+94,Hard,What are n-grams and why are they useful?,"N-grams capture sequences of words, improving context understanding but increasing feature dimensionality."
+95,Easy,What is cosine similarity?,Cosine similarity measures similarity between vectors based on the angle between them rather than magnitude.
+96,Medium,What is a clustering evaluation metric?,Clustering evaluation metrics like silhouette score assess how well data points are grouped without using labels.
+97,Hard,Explain silhouette score.,"Silhouette score measures how similar a data point is to its own cluster compared to other clusters, indicating clustering quality."
+98,Easy,What is a dummy classifier?,A dummy classifier provides baseline predictions to compare against more complex models.
+99,Hard,How do you deploy a scikit-learn model?,"Deployment involves saving the trained model, creating an inference pipeline, and integrating it into an API or application."

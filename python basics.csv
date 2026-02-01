@@ -1,0 +1,51 @@
+﻿Serial No,Difficulty,Question,Answer
+1,Easy,What is Python and why is it so popular?,"Python is a high-level, interpreted programming language known for its simple and readable syntax. It allows developers to write fewer lines of code compared to many other languages, which makes development faster and easier. Python is popular because it supports multiple programming paradigms like procedural, object-oriented, and functional programming. It also has a huge ecosystem of libraries for web development, data science, automation, AI, and more."
+2,Medium,What is the difference between a list and a tuple in Python?,"The main difference between a list and a tuple is mutability. Lists are mutable, meaning their elements can be changed after creation, while tuples are immutable and cannot be modified once created. Lists are generally used when data needs to be changed frequently, whereas tuples are preferred for fixed data and offer slightly better performance and safety."
+3,Easy,How do you comment code in Python?,"In Python, single-line comments are written using the # symbol. Anything after # on that line is ignored by the interpreter. For multi-line documentation, Python uses triple quotes which are commonly used for docstrings to describe functions, classes, or modules."
+4,Hard,Explain Python’s memory management system.,"Python manages memory automatically using a private heap space where all objects are stored. The Python memory manager handles allocation and deallocation. Reference counting is used as the primary technique, where an object is removed when its reference count drops to zero. Additionally, Python has a cyclic garbage collector to clean up reference cycles that reference counting alone cannot handle."
+5,Medium,What is a Python dictionary and how does it work internally?,"A dictionary is a mutable data structure that stores key-value pairs. Internally, dictionaries use a hash table which allows fast lookup, insertion, and deletion. Each key is hashed to determine where the value is stored. This is why dictionary keys must be immutable and hashable, like strings or tuples."
+6,Easy,What are variables in Python?,"Variables in Python are names that refer to objects stored in memory. Python does not require explicit type declarations; the type is inferred at runtime. Variables can reference different data types at different times, making Python dynamically typed."
+7,Medium,What is the difference between == and is?,"The == operator checks value equality, while is checks object identity in memory. Two objects may have the same value but still be stored at different memory locations."
+8,Easy,What are Python keywords?,"Python keywords are reserved words that have predefined meanings and cannot be used as identifiers. Examples include if, else, for, while, def, and class."
+9,Hard,What are generators and how are they different from lists?,"Generators produce values one at a time using the yield keyword instead of storing them in memory. This makes them more memory-efficient than lists, especially for large datasets."
+10,Medium,What is slicing in Python?,"Slicing extracts a portion of a sequence using start, end, and step values. It returns a new sequence without modifying the original."
+11,Easy,How do you take user input in Python?,Python uses the input() function to read input from the user. The returned value is always a string and may require type conversion.
+12,Medium,What is exception handling in Python?,"Exception handling allows programs to catch and handle runtime errors using try, except, else, and finally blocks, preventing crashes."
+13,Hard,Explain the Global Interpreter Lock (GIL).,"The GIL ensures that only one thread executes Python bytecode at a time in CPython, simplifying memory management but limiting CPU-bound parallelism."
+14,Easy,What is indentation and why is it important?,Indentation defines code blocks in Python and is mandatory. Incorrect indentation leads to syntax errors or logical issues.
+15,Medium,What are lambda functions?,"Lambda functions are small anonymous functions defined using the lambda keyword. They are used for short, simple operations."
+16,Hard,What is monkey patching?,"Monkey patching modifies classes or modules at runtime. While powerful, it can make code harder to maintain and debug."
+17,Easy,What is a function in Python?,A function is a reusable block of code defined using def. It helps reduce repetition and improve code organization.
+18,Medium,Difference between append() and extend()?,"append() adds a single element to a list, while extend() adds elements from another iterable."
+19,Hard,What are metaclasses?,Metaclasses control class creation. They define how classes behave and are mainly used in advanced frameworks.
+20,Easy,What data types are built into Python?,"Python includes int, float, str, list, tuple, set, and dict as built-in data types."
+21,Medium,What is list comprehension?,List comprehension provides a concise way to create lists using expressions and optional conditions.
+22,Hard,Difference between shallow copy and deep copy?,"Shallow copy duplicates references, while deep copy creates independent objects recursively."
+23,Easy,What does len() do?,len() returns the number of items in a sequence or collection.
+24,Medium,What are modules and packages?,"Modules are single Python files, while packages are collections of modules organized in directories."
+25,Hard,How does Python handle multithreading?,"Python supports threading, but due to the GIL, it is best suited for I/O-bound tasks rather than CPU-bound tasks."
+26,Easy,What is print() used for?,print() outputs data to the console for display or debugging.
+27,Medium,What is *args and **kwargs?,"*args allows variable positional arguments, while **kwargs allows variable keyword arguments."
+28,Hard,Explain Python decorators.,"Decorators modify the behavior of functions without changing their code, commonly used for logging or authorization."
+29,Easy,What is a boolean?,A boolean represents True or False values used in logical operations.
+30,Medium,Difference between break and continue?,"break exits the loop, while continue skips the current iteration."
+31,Hard,What is Python MRO?,Method Resolution Order defines the order in which Python searches for methods in inheritance.
+32,Easy,What is a string?,A string is an immutable sequence of characters enclosed in quotes.
+33,Medium,What is the with statement?,The with statement simplifies resource management by automatically handling setup and cleanup.
+34,Hard,What is serialization?,Serialization converts objects into a storable or transferable format like JSON or pickle.
+35,Easy,What does type() do?,type() returns the data type of an object.
+36,Medium,What is recursion?,"Recursion is when a function calls itself to solve smaller subproblems, requiring a base case."
+37,Hard,Explain closures.,Closures are functions that remember variables from their enclosing scope even after execution.
+38,Easy,What is None?,None represents the absence of a value in Python.
+39,Medium,What are sets?,Sets are unordered collections of unique elements useful for membership testing.
+40,Hard,What is duck typing?,"Duck typing focuses on behavior rather than type; if an object behaves correctly, it is accepted."
+41,Easy,What is an interpreter?,"An interpreter executes code line by line, enabling easier debugging."
+42,Medium,Difference between sort() and sorted()?,"sort() modifies the list in place, while sorted() returns a new sorted list."
+43,Hard,What is Python bytecode?,Bytecode is an intermediate representation executed by the Python Virtual Machine.
+44,Easy,What is a loop?,A loop repeatedly executes code while a condition is met.
+45,Medium,What is a virtual environment?,A virtual environment isolates project dependencies to avoid conflicts.
+46,Hard,Explain async and await.,"async and await enable asynchronous, non-blocking execution for I/O-bound tasks."
+47,Easy,What does pass do?,pass is a placeholder statement that does nothing.
+48,Medium,What is file handling?,File handling involves reading and writing files using Python functions.
+49,Hard,What is dependency injection?,Dependency injection provides dependencies externally to improve modularity and testability.
+50,Easy,Why is Python beginner-friendly?,Python’s simple syntax and large ecosystem make it easy for beginners to learn and use.

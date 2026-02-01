@@ -1,0 +1,51 @@
+﻿Serial No,Difficulty,Question,Answer
+1,Easy,What is Django?,"Django is a high-level Python web framework that enables rapid development of secure and maintainable web applications. It follows the batteries-included philosophy by providing built-in features such as authentication, ORM, admin panel, and security mechanisms. Django encourages clean architecture, code reusability, and faster development cycles."
+2,Medium,What architectural pattern does Django follow?,"Django follows the MVT (Model-View-Template) architecture. The Model manages database structure, the View handles business logic, and the Template controls presentation. Although similar to MVC, Django uses different naming conventions while keeping responsibilities clearly separated."
+3,Easy,What is a Django project and a Django app?,"A Django project is the overall web application containing settings and configurations, while a Django app is a modular component that performs a specific function. Multiple apps can exist within a single project, promoting modular and reusable code."
+4,Hard,Explain Django’s request–response lifecycle.,"A request first passes through middleware, then URL routing maps it to a view. The view processes logic, interacts with models, renders a template or response, which again passes through middleware before reaching the client."
+5,Medium,What is Django ORM?,"Django ORM allows developers to interact with databases using Python classes instead of raw SQL. It simplifies database operations, improves security, and supports database portability."
+6,Easy,What is manage.py used for?,"manage.py is a command-line utility used to run the development server, apply migrations, create superusers, and manage Django applications."
+7,Hard,What are Django middlewares and why are they used?,"Middleware processes requests and responses globally. It is used for authentication, session handling, security checks, logging, and other cross-cutting concerns."
+8,Medium,What are Django models?,Django models define database schema using Python classes. Each model maps to a database table and fields represent columns.
+9,Easy,What is Django Admin?,Django Admin is an automatically generated interface that allows administrators to manage application data with minimal configuration.
+10,Hard,How does Django handle database migrations?,"Django migrations track model changes and apply them incrementally to the database schema, ensuring consistency across environments."
+11,Medium,What is a Django view?,A view is a function or class that handles web requests and returns responses containing business logic.
+12,Easy,What is a URL dispatcher in Django?,The URL dispatcher maps incoming URLs to their respective views using URL patterns.
+13,Hard,Explain function-based views vs class-based views.,"Function-based views are simple and straightforward, while class-based views provide reusable, extensible, and object-oriented approaches for complex logic."
+14,Medium,What are Django templates?,Templates define the presentation layer using Django Template Language to render dynamic HTML content.
+15,Easy,What is settings.py?,"settings.py contains all project configurations such as database settings, installed apps, middleware, and security options."
+16,Hard,How does Django ensure security by default?,"Django protects against SQL injection, XSS, CSRF, clickjacking, and password attacks through built-in security features and middleware."
+17,Medium,What is QuerySet in Django?,"A QuerySet represents a lazy collection of database queries allowing filtering, ordering, and aggregation of data."
+18,Easy,What is CSRF protection in Django?,CSRF protection prevents unauthorized form submissions by using secure tokens.
+19,Hard,Explain Django authentication system.,"Django provides a built-in authentication system for managing users, groups, permissions, login, logout, and password security."
+20,Medium,What is INSTALLED_APPS?,INSTALLED_APPS lists all Django apps enabled within the project.
+21,Easy,What is a superuser in Django?,A superuser is an administrative account with full permissions and access to Django Admin.
+22,Hard,How does Django handle static and media files?,"Django manages static files for CSS and JavaScript and media files for user uploads, configured separately for development and production."
+23,Medium,What is pagination in Django?,Pagination splits large datasets into smaller pages to improve performance and user experience.
+24,Easy,What is urls.py?,urls.py maps URL patterns to corresponding views.
+25,Hard,Explain Django signals.,Signals allow decoupled components to communicate by triggering actions when certain events occur.
+26,Medium,What is Django Rest Framework (DRF)?,"DRF is a toolkit for building RESTful APIs with features like serializers, authentication, and permissions."
+27,Easy,What is a serializer?,A serializer converts Django model instances into JSON and vice versa for API communication.
+28,Hard,Difference between select_related and prefetch_related.,"select_related uses SQL joins for foreign keys, while prefetch_related performs separate queries for many-to-many relationships."
+29,Medium,What is Django middleware order?,Middleware executes in the order defined for requests and reverse order for responses.
+30,Easy,What is Django shell?,Django shell is an interactive environment for testing models and queries.
+31,Hard,How does Django handle caching?,"Django supports caching backends like memory, file-based, and Redis to improve performance."
+32,Medium,What is a context processor?,Context processors inject variables globally into templates.
+33,Easy,What is WSGI?,WSGI defines how web servers communicate with Python web applications.
+34,Hard,Explain Django transactions.,Django transactions ensure atomic database operations where all changes succeed or fail together.
+35,Medium,What is Form vs ModelForm?,"Form is manually defined, while ModelForm automatically generates fields from models."
+36,Easy,What is makemigrations?,makemigrations generates migration files based on model changes.
+37,Hard,How does Django handle concurrency?,Django handles concurrency using thread-safe request handling and database transactions.
+38,Medium,What is Django context?,Context is a dictionary of data passed from views to templates.
+39,Easy,What is DEBUG mode?,DEBUG mode provides detailed error pages during development and must be disabled in production.
+40,Hard,How does Django support REST APIs?,Django supports REST APIs mainly through Django Rest Framework with serialization and authentication tools.
+41,Medium,What is database indexing in Django?,Indexing improves query performance by allowing faster data retrieval.
+42,Easy,What is collectstatic?,collectstatic gathers all static files into one directory for production.
+43,Hard,What are Django permissions and groups?,"Permissions control access to actions, while groups assign permissions to multiple users."
+44,Medium,What is a slug field?,A slug field stores URL-friendly text for SEO-friendly URLs.
+45,Easy,What is ALLOWED_HOSTS?,ALLOWED_HOSTS specifies which domains can serve the Django application.
+46,Hard,How do you deploy a Django application?,"Deployment involves configuring a web server, application server, database, static files, and environment variables."
+47,Medium,What is Django testing framework?,"Django provides a testing framework based on unittest for testing models, views, and APIs."
+48,Easy,What is requirements.txt?,requirements.txt lists project dependencies for consistent environments.
+49,Hard,How does Django handle scalability?,"Django scales using load balancing, caching, and database optimization."
+50,Easy,Why is Django suitable for large applications?,"Django promotes clean architecture, security, scalability, and rapid development."
